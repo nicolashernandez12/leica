@@ -14,9 +14,15 @@ class Software extends Model
         return $this->belongsTo('App\SoftwareType', 'id_software_type','id');
     }
 
-    public function inventory()
+
+    public function softwarePlanStudy()
     {
-        return $this->belongsTo('App\Inventory', 'id_inventory','id');
+        return $this->hasMany('App\SoftwarePlanStudy', 'id_software','id');
+    }
+
+    public function placeSoftware()
+    {
+        return $this->hasMany('App\PlaceSoftware', 'id_software','id');
     }
 
 }

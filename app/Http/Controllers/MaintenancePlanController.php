@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\MaintenancePlan;
-use App\Reason;
 use App\Priority;
 use App\Frequency;
 use Illuminate\Http\Request;
@@ -19,8 +18,7 @@ class MaintenancePlanController extends Controller
     {
         return view('maintenance_plan.index')->with('maintenance_plans',
             MaintenancePlan::with('priority')->get(),
-            MaintenancePlan::with('frequency')->get(),
-            MaintenancePlan::with('reason')->get());
+            MaintenancePlan::with('frequency')->get());
         
     }
 
@@ -31,10 +29,9 @@ class MaintenancePlanController extends Controller
      */
     public function create()
     {
-        $reasons = Reason::all();
         $frequencies = Frequency::all();
         $priorities = Priority::all();
-        return view('maintenance_plan.create', compact('reasons','frequencies','priorities'));
+        return view('maintenance_plan.create', compact('frequencies','priorities'));
     }
 
     /**
@@ -49,7 +46,6 @@ class MaintenancePlanController extends Controller
             'maintenance_plan_name' => 'required',
             'description' => 'required',
             'id_priority' => 'required',
-            'id_reason' => 'required',
             'id_frequency' => 'required'
           ]);
   
@@ -79,11 +75,9 @@ class MaintenancePlanController extends Controller
     public function edit($id)
     {
         $maintenance_plan = MaintenancePlan::find($id);
-        $reasons = Reason::all();
         $priorities = Priority::all();
         $frequencies = Frequency::all();
-        return view('maintenance_plan.edit')->with('maintenance_plan',$maintenance_plan)->with('reasons',$reasons)
-                                                                                        ->with('priorities',$priorities)
+        return view('maintenance_plan.edit')->with('maintenance_plan',$maintenance_plan)->with('priorities',$priorities)
                                                                                         ->with('frequencies',$frequencies);
                                                                                                 
                                                                                                 
@@ -107,7 +101,6 @@ class MaintenancePlanController extends Controller
           ]);
           $maintenance_plan = MaintenancePlan::find($id);
           $maintenance_plan->maintenance_plan_name = $request->get('maintenance_plan_name');
-          $maintenance_plan->id_reason = $request->get('id_reason');
           $maintenance_plan->id_frequency = $request->get('id_frequency');
           $maintenance_plan->id_priority = $request->get('id_priority');
           $maintenance_plan->description = $request->get('description');

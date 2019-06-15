@@ -47,6 +47,15 @@
         </div>
 
         <div class="col-md-12">
+          <strong>Razón: </strong>
+          <select class="form-control" name="id_reason">
+            @foreach ($reasons as $reason)
+              <option value="{{$reason->id}}">{{$reason->reason_name}}</option>
+            @endforeach
+          </select>
+        </div>
+
+        <div class="col-md-12">
           <a href="{{route('maintenance.index')}}" class="btn btn-sm btn-success">Back</a>
           <button type="submit" class="btn btn-sm btn-primary">Submit</button>
         </div>

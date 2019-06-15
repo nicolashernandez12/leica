@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Software;
 use App\SoftwareType;
-use App\Inventory;
 use Illuminate\Http\Request;
 
 class SoftwareController extends Controller
@@ -17,7 +16,6 @@ class SoftwareController extends Controller
     public function index()
     {
         return view('software.index')->with('softwares',
-        Software::with('inventory')->get(),
         Software::with('softwareType')->get());
     }
 
@@ -29,8 +27,7 @@ class SoftwareController extends Controller
     public function create()
     {
         $software_types = SoftwareType::all();
-        $inventories = Inventory::all();
-        return view('software.create', compact('software_types','inventories'));
+        return view('software.create', compact('software_types'));
     }
 
     /**
@@ -44,8 +41,7 @@ class SoftwareController extends Controller
         $request->validate([
             'name_software' => 'required',
             'version' => 'required',
-            'id_software_type' => 'required',
-            'id_inventory' => 'required'
+            'id_software_type' => 'required'
           ]);
   
           Software::create($request->all());
@@ -75,9 +71,7 @@ class SoftwareController extends Controller
     {
         $software = Software::find($id);
         $software_types = SoftwareType::all();
-        $inventories = Inventory::all();
-        return view('software.edit')->with('software',$software)->with('software_types',$software_types)
-                                                                                        ->with('inventories',$inventories);
+        return view('software.edit')->with('software',$software)->with('software_types',$software_types);
                                                                                                 
           
     }
@@ -94,14 +88,12 @@ class SoftwareController extends Controller
         $request->validate([
             'name_software' => 'required',
             'version' => 'required',
-            'id_software_type' => 'required',
-            'id_inventory' => 'required'
+            'id_software_type' => 'required'
           ]);
           $software = Software::find($id);
           $software->name_software = $request->get('name_software');
           $software->version = $request->get('version');
           $software->id_software_type = $request->get('id_software_type');
-          $software->id_inventory = $request->get('id_inventory');
           $software->description = $request->get('description');
           $software->observation = $request->get('observation');
           $software->save();

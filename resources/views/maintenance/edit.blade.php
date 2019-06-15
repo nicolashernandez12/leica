@@ -24,7 +24,7 @@
       <div class="row">
           
           <div class="col-md-12">
-            <strong>User: </strong>
+            <strong>Usuario: </strong>
             <select class="form-control" name="id_user">
               <option selected value="{{$maintenance->id_user}}">{{$maintenance->userData->liable->name_person}} {{$maintenance->userData->liable->last_name_person}}</option>
               @foreach ($users as $user)
@@ -34,11 +34,21 @@
           </div>
 
           <div class="col-md-12">
-            <strong>Inventory: </strong>
+            <strong>Inventario: </strong>
             <select class="form-control" name="id_inventory">
               <option selected value="{{$maintenance->id_inventory}}">{{$maintenance->inventory->activeInput->input_name}}</option>
                 @foreach ($inventories as $inventory)
               <option value="{{$inventory->id}}">{{$inventory->activeInput->input_name}}</option>
+                @endforeach
+            </select>
+          </div>
+
+          <div class="col-md-12">
+            <strong>Razon: </strong>
+            <select class="form-control" name="id_reason">
+              <option selected value="{{$maintenance->id_reason}}">{{$maintenance->reason->reason_name}}</option>
+                @foreach ($reasons as $reason)
+              <option value="{{$reason->id}}">{{$reason->reason_name}}</option>
                 @endforeach
             </select>
           </div>

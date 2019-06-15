@@ -25,11 +25,6 @@
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>Inventory : </strong> {{$software->inventory->activeInput->input_name}}
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
           <strong>Description : </strong> {{$software->description}}
         </div>
       </div>

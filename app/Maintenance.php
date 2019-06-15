@@ -15,6 +15,11 @@ class Maintenance extends Model
         return $this->belongsTo('App\UserData', 'id_user','id');
     }
 
+    public function reason()
+    {
+        return $this->belongsTo('App\Reason', 'id_reason','id');
+    }
+
     public function inventory()
     {
         return $this->belongsTo('App\Inventory', 'id_inventory','id');

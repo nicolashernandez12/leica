@@ -23,23 +23,14 @@
       @csrf
       <div class="row">
       <div class="col-md-12">
-          <strong>Name:</strong>
+          <strong>Nombre:</strong>
           <input type="text" name="maintenance_plan_name" class="form-control" placeholder="maintenance plan name">
         </div>
         <div class="col-md-12">
-          <strong>Description :</strong>
+          <strong>Descripcion :</strong>
           <textarea class="form-control" placeholder="description" name="description" rows="8" cols="80"></textarea>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <strong>Reason: </strong>
-            <select class="form-control" name="id_reason">
-              @foreach ($reasons as $reason)
-              <option value="{{$reason->id}}">{{$reason->reason_name}}</option>
-              @endforeach
-            </select>
-          </div>
-        </div>
+        
         <div class="row">
           <div class="col-md-12">
             <strong>frequency: </strong>

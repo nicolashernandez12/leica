@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Inventory;
-use App\Place;
 use App\ActiveInput;
 use App\State;
 use Illuminate\Http\Request;
@@ -19,7 +18,6 @@ class InventoryController extends Controller
     {
         return view('inventory.index')->with('inventories',
         Inventory::with('activeInput')->get(),
-        Inventory::with('place')->get(),
         Inventory::with('state')->get());
     }
 
@@ -32,8 +30,7 @@ class InventoryController extends Controller
     {
         $active_inputs = ActiveInput::all();
         $states = State::all();
-        $places = Place::all();
-        return view('inventory.create', compact('active_inputs','states','places'));
+        return view('inventory.create', compact('active_inputs','states'));
     }
 
     /**
@@ -47,8 +44,7 @@ class InventoryController extends Controller
         $request->validate([
             'quantity' => 'required',
             'id_active_input' => 'required',
-            'id_state' => 'required',
-            'id_place' => 'required'
+            'id_state' => 'required'
           ]);
   
           Inventory::create($request->all());
@@ -79,10 +75,8 @@ class InventoryController extends Controller
         $inventory = Inventory::find($id);
         $active_inputs = ActiveInput::all();
         $states = State::all();
-        $places = Place::all();
         return view('inventory.edit')->with('inventory',$inventory)->with('active_inputs',$active_inputs)
-                                                                            ->with('states',$states)
-                                                                            ->with('places',$places);
+                                                                            ->with('states',$states);
     }
 
     /**
@@ -97,14 +91,12 @@ class InventoryController extends Controller
         $request->validate([
             'quantity' => 'required',
             'id_active_input' => 'required',
-            'id_state' => 'required',
-            'id_place' => 'required'
+            'id_state' => 'required'
           ]);
           $inventory = Inventory::find($id);
           $inventory->quantity = $request->get('quantity');
           $inventory->observation = $request->get('observation');
           $inventory->id_active_input = $request->get('id_active_input');
-          $inventory->id_place = $request->get('id_place');
           $inventory->id_state = $request->get('id_state');
           $inventory->save();
           return redirect()->route('inventory.index')

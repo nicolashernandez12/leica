@@ -43,7 +43,7 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
-/*        'mysql' => [
+        'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -61,20 +61,20 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
-        ],*/
-
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => 'localhost',
-            'port' => '3306',
-            'database' => 'leica_db',
-            'username' => 'administrador',
-            'password' => 'secret',
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
         ],
+
+        // 'mysql' => [
+        //     'driver' => 'mysql',
+        //     'host' => 'localhost',
+        //     'port' => '3306',
+        //     'database' => 'leica_db',
+        //     'username' => 'administrador',
+        //     'password' => 'secret',
+        //     'charset' => 'utf8mb4',
+        //     'collation' => 'utf8mb4_unicode_ci',
+        //     'prefix' => '',
+        //     'strict' => true,
+        // ],
 
         'pgsql' => [
             'driver' => 'pgsql',

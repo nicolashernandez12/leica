@@ -43,15 +43,6 @@
         </div>
 
         <div class="col-md-12">
-          <strong>Place: </strong>
-          <select class="form-control" name="id_place">
-            @foreach ($places as $place)
-            <option value="{{$place->id}}">{{$place->place_name}}</option>
-            @endforeach
-          </select>
-        </div>
-
-        <div class="col-md-12">
           <strong>State: </strong>
           <select class="form-control" name="id_state">
             @foreach ($states as $state)

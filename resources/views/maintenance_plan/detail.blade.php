@@ -25,11 +25,6 @@
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>reason Name : </strong> {{$maintenance_plan->reason->reason_name}}
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
           <strong>Description : </strong> {{$maintenance_plan->description}}
         </div>
       </div>

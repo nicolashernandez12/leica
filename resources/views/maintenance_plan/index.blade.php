@@ -21,7 +21,6 @@
       <tr>
         <th width = "50px"><b>No.</b></th>
         <th>Name</th>
-        <th>Reason</th>
         <th>Priority</th>
         <th>Frequency</th>
         <th width = "180px">Action</th>
@@ -31,7 +30,6 @@
         <tr>
           <td><b>{{$maintenance_plan->id}}.</b></td>
           <td>{{$maintenance_plan->maintenance_plan_name}}</td>
-          <td>{{$maintenance_plan->reason->reason_name}}</td>
           <td>{{$maintenance_plan->priority->priority_name}}</td>
           <td>{{$maintenance_plan->frequency->frequency_name}}</td>
           <td>

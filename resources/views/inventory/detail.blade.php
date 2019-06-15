@@ -20,11 +20,6 @@
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>Place : </strong> {{$inventory->place->place_name}}
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
           <strong>State : </strong> {{$inventory->state->state_name}}
         </div>
       </div>

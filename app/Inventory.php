@@ -9,14 +9,11 @@ class Inventory extends Model
     protected $table = 'inventories';
     protected $guarded = [];
 
+
+    // Foraneas
     public function activeInput()
     {
         return $this->belongsTo('App\ActiveInput', 'id_active_input','id');
-    }
-
-    public function place()
-    {
-        return $this->belongsTo('App\Place', 'id_place','id');
     }
     
     public function state()
@@ -24,6 +21,7 @@ class Inventory extends Model
         return $this->belongsTo('App\State', 'id_state','id');
     }
 
+    //primaria
     public function loanRegistration()
     {
         return $this->hasMany('App\LoanRegistration', 'id_inventory','id');
@@ -42,11 +40,6 @@ class Inventory extends Model
     public function maintenance()
     {
         return $this->hasMany('App\Maintenance', 'id_inventory','id');
-    }
-
-    public function Software()
-    {
-        return $this->hasMany('App\Software', 'id_inventory','id');
     }
 
 }

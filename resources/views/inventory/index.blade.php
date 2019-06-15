@@ -22,7 +22,6 @@
         <th width = "50px"><b>No.</b></th>
         <th>Name Active Input</th>
         <th>quantity</th>
-        <th>Place</th>
         <th>State</th>
         <th width = "180px">Action</th>
       </tr>
@@ -32,7 +31,6 @@
           <td><b>{{$inventory->id}}.</b></td>
           <td>{{$inventory->activeInput->input_name}}</td>
           <td>{{$inventory->quantity}}</td>
-          <td>{{$inventory->place->place_name}}</td>
           <td>{{$inventory->state->state_name}}</td>
           <td>
           <form action="{{route('inventory.destroy', $inventory->id)}}" method="post">

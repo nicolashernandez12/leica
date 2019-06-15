@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Maintenance;
 use App\UserData;
 use App\Inventory;
+use App\Reason;
 use Illuminate\Http\Request;
 
 class MaintenanceController extends Controller
@@ -16,7 +17,9 @@ class MaintenanceController extends Controller
      */
     public function index()
     {
-        return view('maintenance.index')->with('maintenances',Maintenance::with('userData')->get(),Maintenance::with('inventory')->get());
+        return view('maintenance.index')->with('maintenances',Maintenance::with('userData')->get(),
+                                                            Maintenance::with('reason')->get(),
+                                                            Maintenance::with('inventory')->get());
     }
 
     /**
@@ -27,8 +30,9 @@ class MaintenanceController extends Controller
     public function create()
     {
         $users = UserData::all();
+        $reasons = Reason::all();
         $inventories = Inventory::all();
-        return view('maintenance.create', compact('inventories','users'));
+        return view('maintenance.create', compact('inventories','users','reasons'));
     }
 
     /**
@@ -42,6 +46,7 @@ class MaintenanceController extends Controller
         $request->validate([
             'id_user' => 'required',
             'id_inventory' => 'required',
+            'id_reason' => 'required',
             'date_maintenance' => 'required',
           ]);
   
@@ -73,7 +78,11 @@ class MaintenanceController extends Controller
         $maintenance = Maintenance::find($id);
         $inventories = Inventory::all();
         $users = UserData::all();
-        return view('maintenance.edit')->with('maintenance',$maintenance)->with('inventories',$inventories)->with('users',$users);
+        $reasons = Reason::all();
+        return view('maintenance.edit')->with('maintenance',$maintenance)
+                                        ->with('inventories',$inventories)
+                                        ->with('reasons',$reasons)
+                                        ->with('users',$users);
     }
 
     /**
@@ -88,12 +97,14 @@ class MaintenanceController extends Controller
         $request->validate([
             'date_maintenance' => 'required',
             'id_user' => 'required',
+            'id_reason' => 'required',
             'id_inventory' => 'required',
           ]);
           $maintenance = Maintenance::find($id);
           $maintenance->date_maintenance = $request->get('date_maintenance');
           $maintenance->id_user = $request->get('id_user');
           $maintenance->id_inventory = $request->get('id_inventory');
+          $maintenance->id_reason = $request->get('id_reason');
           $maintenance->save();
           return redirect()->route('maintenance.index')
                           ->with('success', 'maintenance name updated successfully');

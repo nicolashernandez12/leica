@@ -17,8 +17,6 @@ class CreateMaintenancePlansTable extends Migration
             $table->bigIncrements('id');
             $table->string('maintenance_plan_name');
             $table->string('description');
-            $table->unsignedBigInteger('id_reason');
-            $table->foreign('id_reason')->references('id')->on('reasons')->onDelete('cascade');
             $table->unsignedBigInteger('id_frequency');
             $table->foreign('id_frequency')->references('id')->on('frequencies')->onDelete('cascade');
             $table->unsignedBigInteger('id_priority');

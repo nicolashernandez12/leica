@@ -28,16 +28,6 @@
           </div>
 
           <div class="col-md-12">
-              <strong>Reason: </strong>
-              <select class="form-control" name="id_reason">
-                <option selected value="{{$maintenance_plan->reason->id}}">{{$maintenance_plan->reason->reason_name}}</option>
-                  @foreach ($reasons as $reason)
-                <option value="{{$reason->id}}">{{$reason->reason_name}}</option>
-                  @endforeach
-              </select>
-          </div>
-
-          <div class="col-md-12">
             <strong>Priority: </strong>
             <select class="form-control" name="id_priority">
               <option selected value="{{$maintenance_plan->priority->id}}">{{$maintenance_plan->priority->priority_name}}</option>

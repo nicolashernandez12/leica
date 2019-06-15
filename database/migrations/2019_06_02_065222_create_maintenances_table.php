@@ -20,6 +20,8 @@ class CreateMaintenancesTable extends Migration
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('id_inventory');
             $table->foreign('id_inventory')->references('id')->on('inventories')->onDelete('cascade');
+            $table->unsignedBigInteger('id_reason');
+            $table->foreign('id_reason')->references('id')->on('reasons')->onDelete('cascade');
             $table->timestamps();
         });
     }

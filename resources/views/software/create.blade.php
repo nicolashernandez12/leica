@@ -40,14 +40,6 @@
             @endforeach
           </select>
         </div>
-        <div class="col-md-12">
-          <strong>Inventory: </strong>
-          <select class="form-control" name="id_inventory">
-            @foreach ($inventories as $inventory)
-            <option value="{{$inventory->id}}">{{$inventory->activeInput->input_name}}</option>
-            @endforeach
-          </select>
-        </div>
 
         <div class="col-md-12">
           <strong>Description :</strong>

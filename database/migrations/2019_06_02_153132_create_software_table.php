@@ -21,8 +21,6 @@ class CreateSoftwareTable extends Migration
             $table->foreign('id_software_type')->references('id')->on('software_types')->onDelete('cascade');
             $table->string('description')->nullable();
             $table->string('observation')->nullable();
-            $table->unsignedBigInteger('id_inventory');
-            $table->foreign('id_inventory')->references('id')->on('inventories')->onDelete('cascade');
             $table->timestamps();
         });
     }

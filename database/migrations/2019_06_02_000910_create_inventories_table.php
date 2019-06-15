@@ -17,8 +17,6 @@ class CreateInventoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('quantity');
             $table->string('observation')->nullable();
-            $table->unsignedBigInteger('id_place');
-            $table->foreign('id_place')->references('id')->on('places')->onDelete('cascade');
             $table->unsignedBigInteger('id_active_input');
             $table->foreign('id_active_input')->references('id')->on('active_inputs')->onDelete('cascade');
             $table->unsignedBigInteger('id_state');

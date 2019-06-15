@@ -9,11 +9,6 @@ class MaintenancePlan extends Model
     protected $table = 'maintenance_plans';
     protected $guarded = [];
 
-    public function reason()
-    {
-        return $this->belongsTo('App\Reason', 'id_reason','id');
-    }
-
     public function priority()
     {
         return $this->belongsTo('App\Priority', 'id_priority','id');

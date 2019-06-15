@@ -51,7 +51,6 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             // 'name' => ['required', 'string', 'max:255'],
-            'id_liable' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -67,8 +66,7 @@ class RegisterController extends Controller
     {
         $liables = Liable::all();
         return User::create([
-            'id_liable'=>$data['id_liable'],
-            // 'name' => $data['name'],
+            'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
