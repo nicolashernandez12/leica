@@ -3,13 +3,13 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3>New active input</h3>
+        <h3>Agregar activo inzumo</h3>
       </div>
     </div>
 
     @if ($errors->any())
       <div class="alert alert-danger">
-        <strong>Whoops! </strong> there where some problems with your input.<br>
+        <strong>Whoops! </strong> Hay algun(os) problema(s) con tu(s) entrada(s).<br>
         <ul>
           @foreach ($errors as $error)
             <li>{{$error}}</li>
@@ -23,32 +23,32 @@
       <div class="row">
 
         <div class="col-md-12">
-          <strong>Name:</strong>
+          <strong>Nombre:</strong>
           <input type="text" name="input_name" class="form-control" placeholder="active_input name" required="required">
         </div>
 
         <div class="col-md-12">
-            <strong>UF Value:</strong>
+            <strong>Valor UF:</strong>
             <input type="number" name="uf_value" class="form-control" placeholder="UF Value" required="required">
           </div>
 
         <div class="col-md-12">
-          <strong>Characteristic :</strong>
+          <strong>Caracteristicas :</strong>
           <textarea class="form-control" placeholder="characteristic" name="characteristic" rows="4" cols="80"></textarea>
         </div>
 
         <div class="col-md-12">
-            <strong>Observation :</strong>
+            <strong>Observacion :</strong>
             <textarea class="form-control" placeholder="observation" name="observation" rows="4" cols="80"></textarea>
         </div>
 
         <div class="col-md-12">
-            <strong>Description :</strong>
+            <strong>Descripcion :</strong>
             <textarea class="form-control" placeholder="description" name="description" rows="4" cols="80"></textarea>
         </div>
 
         <div class="col-md-12">
-            <strong>Serial Number:</strong>
+            <strong>Numero de serie:</strong>
             <input type="text" name="serial_number" class="form-control" placeholder="serial number" required="required">
         </div>
 
@@ -62,7 +62,7 @@
         </div>
 
         <div class="col-md-12">
-            <strong>Maintenance Plan: </strong>
+            <strong>Plan de mantencion: </strong>
             <select class="form-control" name="id_maintenance_plan">
               @foreach ($maintenance_plans as $maintenance_plan)
               <option value="{{$maintenance_plan->id}}">{{$maintenance_plan->maintenance_plan_name}}</option>
@@ -71,8 +71,8 @@
         </div>
 
         <div class="col-md-12">
-          <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Back</a>
-          <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+          <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>
     </form>
