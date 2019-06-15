@@ -111,7 +111,7 @@ class StudyPlanController extends Controller
         $study_plan->save();
 
         return redirect()->route('study_plan.index')
-            ->with('success', 'Plan de estudio actualizado exitosamente');
+            ->with('success', 'plan de estudio actualizado exitosamente');
     }
 
     /**
@@ -125,6 +125,6 @@ class StudyPlanController extends Controller
         $study_plan = StudyPlan::find($id);
         $study_plan->delete();
         return redirect()->route('study_plan.index')
-            ->with('success', 'Plan de estudio eliminado exitosamente');
+            ->with('success', 'plan de estudio eliminado exitosamente');
     }
 }

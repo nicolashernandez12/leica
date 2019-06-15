@@ -48,7 +48,7 @@ class LendingController extends Controller
           
           Lending::create($request->all());
           return redirect()->route('lending.index')
-                          ->with('success', 'new lending added successfully');
+                          ->with('success', 'prestamo agregado exitosamente');
     }
 
     /**
@@ -100,7 +100,7 @@ class LendingController extends Controller
           $lending->real_return_date = $request->get('real_return_date');
           $lending->save();
           return redirect()->route('lending.index')
-                          ->with('success', 'lending name updated successfully');
+                          ->with('success', 'prestamo actualizado exitosamente');
     }
 
     /**
@@ -114,6 +114,6 @@ class LendingController extends Controller
         $lending = Lending::find($id);
         $lending->delete();
         return redirect()->route('lending.index')
-                        ->with('success', 'lending deleted successfully');
+                        ->with('success', 'prestamo eliminado exitosamente');
     }
 }

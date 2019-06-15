@@ -51,7 +51,7 @@ class MaintenancePlanController extends Controller
   
           MaintenancePlan::create($request->all());
           return redirect()->route('maintenance_plan.index')
-                          ->with('success', 'new Maintenance Plan add successfully');
+                          ->with('success', 'plan de mantencion agregada exitosamente');
     }
 
     /**
@@ -106,7 +106,7 @@ class MaintenancePlanController extends Controller
           $maintenance_plan->description = $request->get('description');
           $maintenance_plan->save();
           return redirect()->route('maintenance_plan.index')
-                          ->with('success', 'Maintenance Plan updated successfully');
+                          ->with('success', 'plan de mantencion actualizada exitosamente');
     }
 
     /**
@@ -120,6 +120,6 @@ class MaintenancePlanController extends Controller
         $maintenance_plan = MaintenancePlan::find($id);
         $maintenance_plan->delete();
         return redirect()->route('maintenance_plan.index')
-                        ->with('success', 'Maintenance Plan deleted successfully');
+                        ->with('success', 'plan de mantencion eliminada exitosamente');
     }
 }

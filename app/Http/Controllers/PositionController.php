@@ -44,7 +44,7 @@ class PositionController extends Controller
   
           Position::create($request->all());
           return redirect()->route('position.index')
-                          ->with('success', 'new position created successfully');
+                          ->with('success', 'puesto agregado exitosamente');
     }
 
     /**
@@ -89,7 +89,7 @@ class PositionController extends Controller
           $position->description = $request->get('description');
           $position->save();
           return redirect()->route('position.index')
-                          ->with('success', 'position name updated successfully');
+                          ->with('success', 'puesto actualizado exitosamente');
     }
 
     /**
@@ -103,6 +103,6 @@ class PositionController extends Controller
         $position = Position::find($id);
         $position->delete();
         return redirect()->route('position.index')
-                        ->with('success', 'position deleted successfully');
+                        ->with('success', 'puesto eliminado exitosamente');
     }
 }

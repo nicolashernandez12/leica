@@ -45,7 +45,7 @@ class ModeloController extends Controller
   
           Modelo::create($request->all());
           return redirect()->route('model.index')
-                          ->with('success', 'new model added successfully');
+                          ->with('success', 'modelo agregado exitosamente');
     }
 
     /**
@@ -93,7 +93,7 @@ class ModeloController extends Controller
           $model->description = $request->get('description');
           $model->save();
           return redirect()->route('model.index')
-                          ->with('success', 'model name updated successfully');
+                          ->with('success', 'modelo actualizado exitosamente');
     }
 
     /**
@@ -107,6 +107,6 @@ class ModeloController extends Controller
         $model = Modelo::find($id);
         $model->delete();
         return redirect()->route('model.index')
-                        ->with('success', 'model deleted successfully');
+                        ->with('success', 'modelo eliminado exitosamente');
     }
 }

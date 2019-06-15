@@ -48,7 +48,7 @@ class DifferenceInventoryController extends Controller
   
           DifferenceInventory::create($request->all());
           return redirect()->route('difference_inventory.index')
-                          ->with('success', 'new Difference Inventory added successfully');
+                          ->with('success', 'diferencia inventario agregada exitosamente');
     }
 
     /**
@@ -100,7 +100,7 @@ class DifferenceInventoryController extends Controller
           $difference_inventory->id_inventory_process = $request->get('id_inventory_process');
           $difference_inventory->save();
           return redirect()->route('difference_inventory.index')
-                          ->with('success', 'Difference Inventory updated successfully');
+                          ->with('success', 'diferencia inventario actualizada exitosamente');
     }
 
     /**
@@ -114,6 +114,6 @@ class DifferenceInventoryController extends Controller
         $difference_inventory = DifferenceInventory::find($id);
         $difference_inventory->delete();
         return redirect()->route('difference_inventory.index')
-                        ->with('success', 'Difference Inventory deleted successfully');
+                        ->with('success', 'diferencia inventario eliminada exitosamente');
     }
 }

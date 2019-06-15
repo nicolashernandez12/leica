@@ -47,7 +47,7 @@ class LoanRegistrationController extends Controller
   
           LoanRegistration::create($request->all());
           return redirect()->route('loan_registration.index')
-                          ->with('success', 'new Loan Registration added successfully');
+                          ->with('success', 'registro de prestamo agregado exitosamente');
     }
 
     /**
@@ -97,7 +97,7 @@ class LoanRegistrationController extends Controller
           $loan_registration->id_lending = $request->get('id_lending');
           $loan_registration->save();
           return redirect()->route('loan_registration.index')
-                          ->with('success', 'Loan Registration updated successfully');
+                          ->with('success', 'registro de prestamo actualizado exitosamente');
     }
 
     /**
@@ -111,6 +111,6 @@ class LoanRegistrationController extends Controller
         $loan_registration = LoanRegistration::find($id);
         $loan_registration->delete();
         return redirect()->route('loan_registration.index')
-                        ->with('success', 'Loan Registration deleted successfully');
+                        ->with('success', 'registro de prestamo eliminado exitosamente');
     }
 }

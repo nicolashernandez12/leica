@@ -49,7 +49,7 @@ class InventoryController extends Controller
   
           Inventory::create($request->all());
           return redirect()->route('inventory.index')
-                          ->with('success', 'new Inventory add successfully');
+                          ->with('success', 'inventario agregado exitosamente');
     }
 
     /**
@@ -100,7 +100,7 @@ class InventoryController extends Controller
           $inventory->id_state = $request->get('id_state');
           $inventory->save();
           return redirect()->route('inventory.index')
-                          ->with('success', 'Inventory updated successfully');
+                          ->with('success', 'inventario actualizado exitosamente');
     }
 
     /**
@@ -114,6 +114,6 @@ class InventoryController extends Controller
         $inventory = Inventory::find($id);
         $inventory->delete();
         return redirect()->route('inventory.index')
-                        ->with('success', 'Active Input deleted successfully');
+                        ->with('success', 'inventario eliminado exitosamente');
     }
 }

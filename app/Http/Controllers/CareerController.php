@@ -43,7 +43,7 @@ class CareerController extends Controller
   
           Career::create($request->all());
           return redirect()->route('career.index')
-                          ->with('success', 'nueva carrera agregada exitosamente');
+                          ->with('success', 'carrera agregada exitosamente');
     }
 
     /**

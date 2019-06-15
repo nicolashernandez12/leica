@@ -52,7 +52,7 @@ class MaintenanceController extends Controller
   
           Maintenance::create($request->all());
           return redirect()->route('maintenance.index')
-                          ->with('success', 'new maintenance added successfully');
+                          ->with('success', 'mantencion agregada exitosamente');
     }
 
     /**
@@ -107,7 +107,7 @@ class MaintenanceController extends Controller
           $maintenance->id_reason = $request->get('id_reason');
           $maintenance->save();
           return redirect()->route('maintenance.index')
-                          ->with('success', 'maintenance name updated successfully');
+                          ->with('success', 'mantencion actualizada exitosamente');
     }
 
     /**
@@ -121,6 +121,6 @@ class MaintenanceController extends Controller
         $maintenance = Maintenance::find($id);
         $maintenance->delete();
         return redirect()->route('maintenance.index')
-                        ->with('success', 'maintenance deleted successfully');
+                        ->with('success', 'mantencion eliminada exitosamente');
     }
 }

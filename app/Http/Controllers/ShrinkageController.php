@@ -47,7 +47,7 @@ class ShrinkageController extends Controller
   
           Shrinkage::create($request->all());
           return redirect()->route('shrinkage.index')
-                          ->with('success', 'new Shrinkages added successfully');
+                          ->with('success', 'merma agregada exitosamente');
     }
 
     /**
@@ -97,7 +97,7 @@ class ShrinkageController extends Controller
           $shrinkage->id_type_shrinkage = $request->get('id_type_shrinkage');
           $shrinkage->save();
           return redirect()->route('shrinkage.index')
-                          ->with('success', 'Shrinkages updated successfully');
+                          ->with('success', 'merma actualizada exitosamente');
     }
 
     /**
@@ -111,6 +111,6 @@ class ShrinkageController extends Controller
         $shrinkage = Shrinkage::find($id);
         $shrinkage->delete();
         return redirect()->route('shrinkage.index')
-                        ->with('success', 'Shrinkages deleted successfully');
+                        ->with('success', 'merma eliminada exitosamente');
     }
 }

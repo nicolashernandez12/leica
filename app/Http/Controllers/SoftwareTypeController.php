@@ -44,7 +44,7 @@ class SoftwareTypeController extends Controller
   
           SoftwareType::create($request->all());
           return redirect()->route('software_type.index')
-                          ->with('success', 'new software_type created successfully');
+                          ->with('success', 'tipo de software agregado exitosamente');
     }
 
     /**
@@ -89,7 +89,7 @@ class SoftwareTypeController extends Controller
           $software_type->description = $request->get('description');
           $software_type->save();
           return redirect()->route('software_type.index')
-                          ->with('success', 'software_type name updated successfully');
+                          ->with('success', 'tipo de software actualizado exitosamente');
     }
 
     /**
@@ -103,6 +103,6 @@ class SoftwareTypeController extends Controller
         $software_type = SoftwareType::find($id);
         $software_type->delete();
         return redirect()->route('software_type.index')
-                        ->with('success', 'software_type deleted successfully');
+                        ->with('success', 'tipo de software eliminado exitosamente');
     }
 }

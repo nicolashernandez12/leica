@@ -15,8 +15,7 @@ class FrequencyController extends Controller
     public function index()
     {
         $frequencies = Frequency::latest()->paginate(5);
-        return view('frequency.index', compact('frequencies'))
-                  ->with('i', (request()->input('page',1) -1)*5);
+        return view('frequency.index', compact('frequencies'));
     }
 
     /**
@@ -44,7 +43,7 @@ class FrequencyController extends Controller
   
           Frequency::create($request->all());
           return redirect()->route('frequency.index')
-                          ->with('success', 'new frequency created successfully');
+                          ->with('success', 'frecuencia agregada exitosamente');
     }
 
     /**
@@ -90,7 +89,7 @@ class FrequencyController extends Controller
           $frequency->description = $request->get('description');
           $frequency->save();
           return redirect()->route('frequency.index')
-                          ->with('success', 'frequency name updated successfully');
+                          ->with('success', 'frecuencia actualizada exitosamente');
     }
 
     /**
@@ -104,6 +103,6 @@ class FrequencyController extends Controller
         $frequency = Frequency::find($id);
         $frequency->delete();
         return redirect()->route('frequency.index')
-                        ->with('success', 'frequency deleted successfully');
+                        ->with('success', 'frecuencia eliminada exitosamente');
     }
 }

@@ -44,7 +44,7 @@ class PriorityController extends Controller
   
           priority::create($request->all());
           return redirect()->route('priority.index')
-                          ->with('success', 'new priority created successfully');
+                          ->with('success', 'prioridad agregada exitosamente');
     }
 
     /**
@@ -90,7 +90,7 @@ class PriorityController extends Controller
           $priority->description = $request->get('description');
           $priority->save();
           return redirect()->route('priority.index')
-                          ->with('success', 'priority name updated successfully');
+                          ->with('success', 'prioridad actualizada exitosamente');
     }
 
     /**
@@ -104,6 +104,6 @@ class PriorityController extends Controller
         $priority = Priority::find($id);
         $priority->delete();
         return redirect()->route('priority.index')
-                        ->with('success', 'priority deleted successfully');
+                        ->with('success', 'prioridad eliminada exitosamente');
     }
 }

@@ -44,7 +44,7 @@ class StateController extends Controller
   
           State::create($request->all());
           return redirect()->route('state.index')
-                          ->with('success', 'new state created successfully');
+                          ->with('success', 'estado agregado exitosamente');
     }
 
     /**
@@ -89,7 +89,7 @@ class StateController extends Controller
           $state->description = $request->get('description');
           $state->save();
           return redirect()->route('state.index')
-                          ->with('success', 'state name updated successfully');
+                          ->with('success', 'estado actualizado exitosamente');
     }
 
     /**
@@ -103,6 +103,6 @@ class StateController extends Controller
         $state = State::find($id);
         $state->delete();
         return redirect()->route('state.index')
-                        ->with('success', 'state deleted successfully');
+                        ->with('success', 'estado eliminado exitosamente');
     }
 }

@@ -44,7 +44,7 @@ class ReasonController extends Controller
   
           Reason::create($request->all());
           return redirect()->route('reason.index')
-                          ->with('success', 'new reason created successfully');
+                          ->with('success', 'razon agregada exitosamente');
     }
 
     /**
@@ -89,7 +89,7 @@ class ReasonController extends Controller
           $reason->description = $request->get('description');
           $reason->save();
           return redirect()->route('reason.index')
-                          ->with('success', 'reason name updated successfully');
+                          ->with('success', 'razon actualizada exitosamente');
     }
 
     /**
@@ -103,6 +103,6 @@ class ReasonController extends Controller
         $reason = Reason::find($id);
         $reason->delete();
         return redirect()->route('reason.index')
-                        ->with('success', 'reason deleted successfully');
+                        ->with('success', 'razon eliminada exitosamente');
     }
 }

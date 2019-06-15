@@ -44,7 +44,7 @@ class TypeInventoryController extends Controller
   
           TypeInventory::create($request->all());
           return redirect()->route('type_inventory.index')
-                          ->with('success', 'new type_inventory created successfully');
+                          ->with('success', 'tipo de inventario agregado exitosamente');
     }
 
     /**
@@ -89,7 +89,7 @@ class TypeInventoryController extends Controller
           $type_inventory->description = $request->get('description');
           $type_inventory->save();
           return redirect()->route('type_inventory.index')
-                          ->with('success', 'type_inventory name updated successfully');
+                          ->with('success', 'tipo de inventario actualizado exitosamente');
     }
 
     /**
@@ -103,6 +103,6 @@ class TypeInventoryController extends Controller
         $type_inventory = TypeInventory::find($id);
         $type_inventory->delete();
         return redirect()->route('type_inventory.index')
-                        ->with('success', 'type_inventory deleted successfully');
+                        ->with('success', 'tipo de inventario eliminado exitosamente');
     }
 }

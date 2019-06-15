@@ -44,7 +44,7 @@ class TypeShrinkageController extends Controller
   
           TypeShrinkage::create($request->all());
           return redirect()->route('type_shrinkage.index')
-                          ->with('success', 'new type_shrinkage created successfully');
+                          ->with('success', 'tipo de merma agregada exitosamente');
     }
 
     /**
@@ -89,7 +89,7 @@ class TypeShrinkageController extends Controller
           $type_shrinkage->description = $request->get('description');
           $type_shrinkage->save();
           return redirect()->route('type_shrinkage.index')
-                          ->with('success', 'type_shrinkage name updated successfully');
+                          ->with('success', 'tipo de merma actualizada exitosamente');
     }
 
     /**
@@ -103,6 +103,6 @@ class TypeShrinkageController extends Controller
         $type_shrinkage = TypeShrinkage::find($id);
         $type_shrinkage->delete();
         return redirect()->route('type_shrinkage.index')
-                        ->with('success', 'type_shrinkage deleted successfully');
+                        ->with('success', 'tipo de merma eliminada exitosamente');
     }
 }

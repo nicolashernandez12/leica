@@ -51,7 +51,7 @@ class ActiveInputController extends Controller
   
           ActiveInput::create($request->all());
           return redirect()->route('active_input.index')
-                          ->with('success', 'new Active input add successfully');
+                          ->with('success', 'activo inzumo agregado exitosamente');
     }
 
     /**
@@ -108,7 +108,7 @@ class ActiveInputController extends Controller
           $active_input->id_maintenance_plan = $request->get('id_maintenance_plan');
           $active_input->save();
           return redirect()->route('active_input.index')
-                          ->with('success', 'Active Input updated successfully');
+                          ->with('success', 'activo inzumo actualizado exitosamente');
     }
 
     /**
@@ -122,6 +122,6 @@ class ActiveInputController extends Controller
         $active_input = ActiveInput::find($id);
         $active_input->delete();
         return redirect()->route('active_input.index')
-                        ->with('success', 'Active Input deleted successfully');
+                        ->with('success', 'activo inzumo eliminado exitosamente');
     }
 }

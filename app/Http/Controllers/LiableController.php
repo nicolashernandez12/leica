@@ -46,7 +46,7 @@ class LiableController extends Controller
   
           Liable::create($request->all());
           return redirect()->route('liable.index')
-                          ->with('success', 'new liable added successfully');
+                          ->with('success', 'responsable agregado exitosamente');
     }
 
     /**
@@ -96,7 +96,7 @@ class LiableController extends Controller
           $liable->id_position = $request->get('id_position');
           $liable->save();
           return redirect()->route('liable.index')
-                          ->with('success', 'liable name updated successfully');
+                          ->with('success', 'responsable actualizado exitosamente');
     }
 
     /**
@@ -110,6 +110,6 @@ class LiableController extends Controller
         $liable = Liable::find($id);
         $liable->delete();
         return redirect()->route('liable.index')
-                        ->with('success', 'liable deleted successfully');
+                        ->with('success', 'responsable eliminado exitosamente');
     }
 }

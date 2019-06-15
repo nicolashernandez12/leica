@@ -43,7 +43,7 @@ class InventoryProcessController extends Controller
   
           InventoryProcess::create($request->all());
           return redirect()->route('inventory_process.index')
-                          ->with('success', 'new inventory process added successfully');
+                          ->with('success', 'proceso inventario agregado exitosamente');
     }
 
     /**
@@ -89,7 +89,7 @@ class InventoryProcessController extends Controller
           $inventory_process->id_type_inventory = $request->get('id_type_inventory');
           $inventory_process->save();
           return redirect()->route('inventory_process.index')
-                          ->with('success', 'inventory process name updated successfully');
+                          ->with('success', 'proceso inventario actualizado exitosamente');
     }
 
     /**
@@ -103,6 +103,6 @@ class InventoryProcessController extends Controller
         $inventory_process = InventoryProcess::find($id);
         $inventory_process->delete();
         return redirect()->route('inventory_process.index')
-                        ->with('success', 'inventory process deleted successfully');
+                        ->with('success', 'proceso inventario eliminado exitosamente');
     }
 }

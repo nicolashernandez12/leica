@@ -43,7 +43,7 @@ class TrademarkController extends Controller
   
           Trademark::create($request->all());
           return redirect()->route('trademark.index')
-                          ->with('success', 'Marca agregada exitosamente');
+                          ->with('success', 'marca agregada exitosamente');
     }
 
     /**
@@ -88,7 +88,7 @@ class TrademarkController extends Controller
           $trademark->description = $request->get('description');
           $trademark->save();
           return redirect()->route('trademark.index')
-                          ->with('success', 'Marca actualizada exitosamente');
+                          ->with('success', 'marca actualizada exitosamente');
     }
 
     /**
@@ -102,6 +102,6 @@ class TrademarkController extends Controller
         $trademark = Trademark::find($id);
         $trademark->delete();
         return redirect()->route('trademark.index')
-                        ->with('success', 'Marca eliminada exitosamente');
+                        ->with('success', 'marca eliminada exitosamente');
     }
 }

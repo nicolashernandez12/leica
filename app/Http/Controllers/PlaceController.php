@@ -44,7 +44,7 @@ class PlaceController extends Controller
   
           Place::create($request->all());
           return redirect()->route('place.index')
-                          ->with('success', 'new place created successfully');
+                          ->with('success', 'lugar agregado exitosamente');
     }
 
     /**
@@ -89,7 +89,7 @@ class PlaceController extends Controller
           $place->description = $request->get('description');
           $place->save();
           return redirect()->route('place.index')
-                          ->with('success', 'place name updated successfully');
+                          ->with('success', 'lugar actualizado exitosamente');
     }
 
     /**
@@ -103,6 +103,6 @@ class PlaceController extends Controller
         $place = Place::find($id);
         $place->delete();
         return redirect()->route('place.index')
-                        ->with('success', 'place deleted successfully');
+                        ->with('success', 'lugar eliminado exitosamente');
     }
 }
