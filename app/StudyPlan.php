@@ -16,17 +16,12 @@ class StudyPlan extends Model
 
     public function equipment()
     {
-        return $this->hasOne(EquipmentPlanStudy::class, 'id_study_plan', 'id');
+        return $this->hasMany(EquipmentPlanStudy::class, 'id_study_plan', 'id');
     }
 
-    public function actives()
+    public function softwarePlanStudy()
     {
-        return $this->belongsToMany(ActiveInput::class, 'actives_by_study_plans');
-    }
-
-    public function softwares()
-    {
-        return $this->belongsToMany(Software::class, 'software_by_study_plans');
+        return $this->hasMany('App\SoftwarePlanStudy', 'id_study_plan','id');
     }
 
 
