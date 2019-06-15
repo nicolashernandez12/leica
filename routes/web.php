@@ -46,6 +46,8 @@ route::resource('software','SoftwareController');
 route::resource('shrinkage','ShrinkageController');
 route::resource('loan_registration','LoanRegistrationController');
 route::resource('difference_inventory','DifferenceInventoryController');
+route::resource('software_plan_study','SoftwarePlanStudyController');
+route::resource('place_software','PlaceSoftwareController');
 
 // Auth::routes(['register' => false]);
 Auth::routes();

@@ -47,7 +47,7 @@ class EquipmentPlanStudyController extends Controller
   
           EquipmentPlanStudy::create($request->all());
           return redirect()->route('equipment_plan_study.index')
-                          ->with('success', 'new equipment plan study added successfully');
+                          ->with('success', 'equipo plan de estudio agregado exitosamente');
     }
 
     /**
@@ -97,7 +97,7 @@ class EquipmentPlanStudyController extends Controller
           $equipment_plan_study->id_active_input = $request->get('id_active_input');
           $equipment_plan_study->save();
           return redirect()->route('equipment_plan_study.index')
-                          ->with('success', 'equipment plan study updated successfully');
+                          ->with('success', 'equipo plan de estudio actualizado exitosamente');
     }
 
     /**
@@ -111,6 +111,6 @@ class EquipmentPlanStudyController extends Controller
         $equipment_plan_study = EquipmentPlanStudy::find($id);
         $equipment_plan_study->delete();
         return redirect()->route('equipment_plan_study.index')
-                        ->with('success', 'equipment plan study deleted successfully');
+                        ->with('success', 'equipo plan de estudio eliminado exitosamente');
     }
 }

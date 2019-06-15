@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\SoftwarePlanStudy;
+use App\StudyPlan;
+use App\Software;
 use Illuminate\Http\Request;
 
 class SoftwarePlanStudyController extends Controller
@@ -14,7 +16,8 @@ class SoftwarePlanStudyController extends Controller
      */
     public function index()
     {
-        //
+        return view('software_plan_study.index')->with('software_plan_studies',SoftwarePlanStudy::with('studyPlan')->get(),
+                                                                                SoftwarePlanStudy::with('software')->get());
     }
 
     /**
@@ -24,7 +27,9 @@ class SoftwarePlanStudyController extends Controller
      */
     public function create()
     {
-        //
+        $study_plans = StudyPlan::all();
+        $softwares = Software::all();
+        return view('software_plan_study.create', compact('study_plans','softwares'));
     }
 
     /**
@@ -35,7 +40,14 @@ class SoftwarePlanStudyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_study_plan' => 'required',
+            'id_software' => 'required'
+          ]);
+  
+          SoftwarePlanStudy::create($request->all());
+          return redirect()->route('software_plan_study.index')
+                          ->with('success', 'software plan estudio agregado exitosamente');
     }
 
     /**
@@ -44,9 +56,10 @@ class SoftwarePlanStudyController extends Controller
      * @param  \App\SoftwarePlanStudy  $softwarePlanStudy
      * @return \Illuminate\Http\Response
      */
-    public function show(SoftwarePlanStudy $softwarePlanStudy)
+    public function show($id)
     {
-        //
+        $software_plan_study = SoftwarePlanStudy::find($id);
+        return view('software_plan_study.detail', compact('software_plan_study'));
     }
 
     /**
@@ -55,9 +68,13 @@ class SoftwarePlanStudyController extends Controller
      * @param  \App\SoftwarePlanStudy  $softwarePlanStudy
      * @return \Illuminate\Http\Response
      */
-    public function edit(SoftwarePlanStudy $softwarePlanStudy)
+    public function edit($id)
     {
-        //
+        $software_plan_study = SoftwarePlanStudy::find($id);
+        $study_plans = StudyPlan::all();
+        $softwares = Software::all();
+        return view('software_plan_study.edit')->with('software_plan_study',$software_plan_study)->with('study_plans',$study_plans)
+                                                                                        ->with('softwares',$softwares);
     }
 
     /**
@@ -67,9 +84,18 @@ class SoftwarePlanStudyController extends Controller
      * @param  \App\SoftwarePlanStudy  $softwarePlanStudy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SoftwarePlanStudy $softwarePlanStudy)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id_study_plan' => 'required',
+            'id_software' => 'required',
+          ]);
+          $software_plan_study = SoftwarePlanStudy::find($id);
+          $software_plan_study->id_study_plan = $request->get('id_study_plan');
+          $software_plan_study->id_software = $request->get('id_software');
+          $software_plan_study->save();
+          return redirect()->route('software_plan_study.index')
+                          ->with('success', 'software plan estudio actualizado exitosamente');
     }
 
     /**
@@ -78,8 +104,11 @@ class SoftwarePlanStudyController extends Controller
      * @param  \App\SoftwarePlanStudy  $softwarePlanStudy
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SoftwarePlanStudy $softwarePlanStudy)
+    public function destroy($id)
     {
-        //
+        $software_plan_study = SoftwarePlanStudy::find($id);
+        $software_plan_study->delete();
+        return redirect()->route('software_plan_study.index')
+                        ->with('success', 'software plan de estudio eliminado exitosamente');
     }
 }

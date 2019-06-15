@@ -15,8 +15,7 @@ class TrademarkController extends Controller
     public function index()
     {
         $trademarks = Trademark::latest()->paginate(5);
-        return view('trademark.index', compact('trademarks'))
-                  ->with('i', (request()->input('page',1) -1)*5);
+        return view('trademark.index', compact('trademarks'));
     }
 
     /**
@@ -44,7 +43,7 @@ class TrademarkController extends Controller
   
           Trademark::create($request->all());
           return redirect()->route('trademark.index')
-                          ->with('success', 'new trademark created successfully');
+                          ->with('success', 'Marca agregada exitosamente');
     }
 
     /**
@@ -89,7 +88,7 @@ class TrademarkController extends Controller
           $trademark->description = $request->get('description');
           $trademark->save();
           return redirect()->route('trademark.index')
-                          ->with('success', 'trademark name updated successfully');
+                          ->with('success', 'Marca actualizada exitosamente');
     }
 
     /**
@@ -103,6 +102,6 @@ class TrademarkController extends Controller
         $trademark = Trademark::find($id);
         $trademark->delete();
         return redirect()->route('trademark.index')
-                        ->with('success', 'trademark deleted successfully');
+                        ->with('success', 'Marca eliminada exitosamente');
     }
 }

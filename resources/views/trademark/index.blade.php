@@ -4,10 +4,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>List trademark</h3>
+        <h3>Lista de marcas</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('trademark.create')}}">Create New trademark</a>
+        <a class="btn btn-sm btn-success" href="{{ route('trademark.create')}}">Agregar nueva marca</a>
       </div>
     </div>
 
@@ -19,24 +19,24 @@
 
     <table class="table table-hover table-sm">
       <tr>
-        <th width = "50px"><b>No.</b></th>
-        <th width = "300px">Name</th>
-        <th>Description</th>
-        <th width = "180px">Action</th>
+        <th width = "50px"><b>ID.</b></th>
+        <th width = "300px">Nombre</th>
+        <th>Descripcion</th>
+        <th width = "200px">Accion</th>
       </tr>
 
       @foreach ($trademarks as $trademark)
         <tr>
-          <td><b>{{++$i}}.</b></td>
+          <td><b>{{$trademark->id}}.</b></td>
           <td>{{$trademark->trademark_name}}</td>
           <td>{{$trademark->description}}</td>
           <td>
           <form action="{{route('trademark.destroy', $trademark->id)}}" method="post">
-            <a class="btn btn-sm btn-success" href="{{route('trademark.show',$trademark->id)}}">Show</a>
-              <a class="btn btn-sm btn-warning" href="{{route('trademark.edit',$trademark->id)}}">Edit</a>
+            <a class="btn btn-sm btn-success" href="{{route('trademark.show',$trademark->id)}}">Mostrar</a>
+              <a class="btn btn-sm btn-warning" href="{{route('trademark.edit',$trademark->id)}}">Editar</a>
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
             </form>
           </td>
         </tr>

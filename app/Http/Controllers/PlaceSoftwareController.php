@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\PlaceSoftware;
+use App\Software;
+use App\Place;
 use Illuminate\Http\Request;
 
 class PlaceSoftwareController extends Controller
@@ -14,7 +16,8 @@ class PlaceSoftwareController extends Controller
      */
     public function index()
     {
-        //
+        return view('place_software.index')->with('place_softwares',PlaceSoftware::with('place')->get(),
+                                                                    PlaceSoftware::with('software')->get());
     }
 
     /**
@@ -24,7 +27,9 @@ class PlaceSoftwareController extends Controller
      */
     public function create()
     {
-        //
+        $places = Place::all();
+        $softwares = Software::all();
+        return view('place_software.create', compact('places','softwares'));
     }
 
     /**
@@ -35,7 +40,14 @@ class PlaceSoftwareController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_place' => 'required',
+            'id_software' => 'required'
+          ]);
+  
+          PlaceSoftware::create($request->all());
+          return redirect()->route('place_software.index')
+                          ->with('success', 'lugar software agregado exitosamente');
     }
 
     /**
@@ -44,20 +56,24 @@ class PlaceSoftwareController extends Controller
      * @param  \App\PlaceSoftware  $placeSoftware
      * @return \Illuminate\Http\Response
      */
-    public function show(PlaceSoftware $placeSoftware)
+    public function show($id)
     {
-        //
+        $place_software = PlaceSoftware::find($id);
+        return view('place_software.detail', compact('place_software'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\PlaceSoftware  $placeSoftware
      * @return \Illuminate\Http\Response
      */
-    public function edit(PlaceSoftware $placeSoftware)
+    public function edit($id)
     {
-        //
+        $place_software = PlaceSoftware::find($id);
+        $places = Place::all();
+        $softwares = Software::all();
+        return view('place_software.edit')->with('place_software',$place_software)->with('places',$places)
+                                                                                  ->with('softwares',$softwares);
     }
 
     /**
@@ -67,9 +83,18 @@ class PlaceSoftwareController extends Controller
      * @param  \App\PlaceSoftware  $placeSoftware
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PlaceSoftware $placeSoftware)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id_place' => 'required',
+            'id_software' => 'required',
+          ]);
+          $place_software = PlaceSoftware::find($id);
+          $place_software->id_place = $request->get('id_place');
+          $place_software->id_software = $request->get('id_software');
+          $place_software->save();
+          return redirect()->route('place_software.index')
+                          ->with('success', 'software lugar actualizado exitosamente');
     }
 
     /**
@@ -78,8 +103,11 @@ class PlaceSoftwareController extends Controller
      * @param  \App\PlaceSoftware  $placeSoftware
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PlaceSoftware $placeSoftware)
+    public function destroy($id)
     {
-        //
+        $place_software = PlaceSoftware::find($id);
+        $place_software->delete();
+        return redirect()->route('place_software.index')
+                        ->with('success', 'software lugar eliminado exitosamente');
     }
 }

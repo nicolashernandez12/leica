@@ -5,13 +5,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h3>New Study Plan</h3>
+                <h3>Nuevo plan de estudio</h3>
             </div>
         </div>
 
         @if ($errors->any())
             <div class="alert alert-danger">
-                <strong>Whoops! </strong> there where some problems with your input.<br>
+                <strong>Whoops! </strong> Hay alguno(s) problema(s) con tu(s) entrada(s).<br>
                 <ul>
                     @foreach ($errors as $error)
                         <li>{{$error}}</li>
@@ -24,11 +24,11 @@
             @csrf
             <div class="row">
                 <div class="col-md-12">
-                    <strong>Study Plan Name:</strong>
+                    <strong>Nombre del plan de estudio:</strong>
                     <input type="text" name="study_plan_name" class="form-control" placeholder="study plan name">
                 </div>
                 <div class="col-md-12">
-                    <strong>Career: </strong>
+                    <strong>Carrera: </strong>
                     <select class="form-control" name="id_career">
                         @foreach ($careers as $career)
                             <option value="{{$career->id}}">{{$career->career_name}}</option>
@@ -36,45 +36,24 @@
                     </select>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <strong>Software: </strong>
-                    <select class="form-control" name="softwares[]" multiple>
-                        @foreach ($softwares as $software)
-                            <option value="{{$software->id}}">{{$software->name_software}}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col-md-12">
-                    <strong>Actives: </strong>
-                    <select class="form-control" name="actives[]" multiple>
-                        @foreach ($active_inputs as $actives)
-                            <option value="{{$actives->id}}">{{$actives->input_name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <strong>Date Start :</strong>
-                    <input type="date" name="date_start" class="form-control">
+                    <strong>Fecha de incio :</strong>
+                    <input type="date" name="date_start" class="form-control" required="required">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <strong>Date End :</strong>
-                    <input type="date" name="date_end" class="form-control">
+                    <strong>Fecha de termino :</strong>
+                    <input type="date" name="date_end" class="form-control" required="required">
                 </div>
             </div>
 
 
             <div class="col-md-12">
-                <a href="{{route('study_plan.index')}}" class="btn btn-sm btn-success">Back</a>
-                <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                <a href="{{route('study_plan.index')}}" class="btn btn-sm btn-success">Atras</a>
+                <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
             </div>
     </div>
     </form>

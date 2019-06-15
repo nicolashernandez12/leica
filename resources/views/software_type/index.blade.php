@@ -4,10 +4,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>List software type</h3>
+        <h3>Lista de tipo de software</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('software_type.create')}}">Create New software type</a>
+        <a class="btn btn-sm btn-success" href="{{ route('software_type.create')}}">Agregar nuevo tipo de software</a>
       </div>
     </div>
 
@@ -19,10 +19,10 @@
 
     <table class="table table-hover table-sm">
       <tr>
-        <th width = "50px"><b>No.</b></th>
-        <th width = "300px">Name</th>
-        <th>Description</th>
-        <th width = "180px">Action</th>
+        <th width = "50px"><b>ID.</b></th>
+        <th width = "300px">Nombre</th>
+        <th>Descripcion</th>
+        <th width = "200px">Accion</th>
       </tr>
 
       @foreach ($software_types as $software_type)
@@ -32,11 +32,11 @@
           <td>{{$software_type->description}}</td>
           <td>
           <form action="{{route('software_type.destroy', $software_type->id)}}" method="post">
-            <a class="btn btn-sm btn-success" href="{{route('software_type.show',$software_type->id)}}">Show</a>
-              <a class="btn btn-sm btn-warning" href="{{route('software_type.edit',$software_type->id)}}">Edit</a>
+            <a class="btn btn-sm btn-success" href="{{route('software_type.show',$software_type->id)}}">Mostrar</a>
+              <a class="btn btn-sm btn-warning" href="{{route('software_type.edit',$software_type->id)}}">Editar</a>
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
             </form>
           </td>
         </tr>

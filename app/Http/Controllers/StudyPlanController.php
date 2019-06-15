@@ -60,31 +60,8 @@ class StudyPlanController extends Controller
         $study_plan->date_end = $request->get('date_end');
         $study_plan->save();
 
-        $study_plan_id = $study_plan->id;
-
-        if ($request->has('softwares')) {
-            $softwares = $request->get('softwares');
-            foreach ($softwares as $software) {
-                $new_assign_software = new SoftwareByStudyPlan();
-                $new_assign_software->software_id = $software;
-                $new_assign_software->study_plan_id = $study_plan_id;
-                $new_assign_software->save();
-            }
-
-        }
-
-        if ($request->has('actives')) {
-            $actives = $request->get('actives');
-            foreach ($actives as $active) {
-                $new_assign_active = new ActivesByStudyPlan();
-                $new_assign_active->active_input_id = $active;
-                $new_assign_active->study_plan_id = $study_plan_id;
-                $new_assign_active->save();
-            }
-        }
-
         return redirect()->route('study_plan.index')
-            ->with('success', 'new study plan add successfully');
+            ->with('success', 'plan de estudio agregado exitosamente');
     }
 
     /**
@@ -104,24 +81,11 @@ class StudyPlanController extends Controller
      */
     public function edit($id)
     {
-        $study_plan = StudyPlan::with('actives', 'softwares')->where('id', $id)->get();
-        $study_plan = $study_plan->first();
+        $study_plan = StudyPlan::find($id);
         $careers = Career::all();
-        $actives = ActiveInput::all();
-        $softwares = Software::all();
 
-        $actives_ids = [];
-        $software_ids = [];
-        foreach ($study_plan->actives as $active) {
-            array_push($actives_ids, $active->id);
-        }
-        foreach ($study_plan->softwares as $software) {
-            array_push($software_ids, $software->id);
-        }
-
-        return view('study_plan.edit',
-            compact('study_plan', 'careers', 'actives', 'softwares', 'actives_ids', 'software_ids'));
-        // ->with('study_plan', $study_plan)->with('careers', $careers);
+        return view('study_plan.edit')
+         ->with('study_plan', $study_plan)->with('careers', $careers);
     }
 
     /**
@@ -146,18 +110,8 @@ class StudyPlanController extends Controller
         $study_plan->date_end = $request->get('date_end');
         $study_plan->save();
 
-        if ($request->has('softwares')) {
-            $softwares = $request->get('softwares');
-            $study_plan->softwares()->sync($softwares);
-        }
-
-        if ($request->has('actives')) {
-            $actives = $request->get('actives');
-            $study_plan->actives()->sync($actives);
-        }
-
         return redirect()->route('study_plan.index')
-            ->with('success', 'Study plan name updated successfully');
+            ->with('success', 'Plan de estudio actualizado exitosamente');
     }
 
     /**
@@ -171,6 +125,6 @@ class StudyPlanController extends Controller
         $study_plan = StudyPlan::find($id);
         $study_plan->delete();
         return redirect()->route('study_plan.index')
-            ->with('success', 'Study plan deleted successfully');
+            ->with('success', 'Plan de estudio eliminado exitosamente');
     }
 }

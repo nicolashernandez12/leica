@@ -4,10 +4,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>List Equipment Plan Study</h3>
+        <h3>Lista de equipo plan de estudio</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('equipment_plan_study.create')}}">Create New Equipment Plan Study</a>
+        <a class="btn btn-sm btn-success" href="{{ route('equipment_plan_study.create')}}">Agregar nuevo equipo plan de estudio</a>
       </div>
     </div>
 
@@ -19,10 +19,10 @@
 
     <table class="table table-hover table-sm">
       <tr>
-        <th width = "50px"><b>No.</b></th>
-        <th>Study Plan</th>
-        <th>Active Input</th>
-        <th width = "180px">Action</th>
+        <th width = "50px"><b>ID.</b></th>
+        <th>Plan de estudio</th>
+        <th>Activo Inzumo</th>
+        <th width = "200px">Accion</th>
       </tr>
       
       @foreach ($equipment_plan_studies as $equipment_plan_study)
@@ -32,11 +32,11 @@
           <td>{{$equipment_plan_study->studyPlan->study_plan_name}}</td>
           <td>
           <form action="{{route('equipment_plan_study.destroy', $equipment_plan_study->id)}}" method="post">
-            <a class="btn btn-sm btn-success" href="{{route('equipment_plan_study.show',$equipment_plan_study->id)}}">Show</a>
-              <a class="btn btn-sm btn-warning" href="{{route('equipment_plan_study.edit',$equipment_plan_study->id)}}">Edit</a>
+            <a class="btn btn-sm btn-success" href="{{route('equipment_plan_study.show',$equipment_plan_study->id)}}">Mostrar</a>
+              <a class="btn btn-sm btn-warning" href="{{route('equipment_plan_study.edit',$equipment_plan_study->id)}}">Editar</a>
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
             </form>
           </td>
         </tr>

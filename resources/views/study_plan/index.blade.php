@@ -4,10 +4,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>List Study plan</h3>
+        <h3>Lista de planes de estudio</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('study_plan.create')}}">Create New Study plan</a>
+        <a class="btn btn-sm btn-success" href="{{ route('study_plan.create')}}">Agregar nuevo plan de estudio</a>
       </div>
     </div>
 
@@ -19,12 +19,12 @@
 
     <table class="table table-hover table-sm">
       <tr>
-        <th width = "50px"><b>No.</b></th>
-        <th width = "300px">Name Study Plan</th>
-        <th>Career Name</th>
-        <th>Date Start</th>
-        <th>Date End</th>
-        <th width = "180px">Action</th>
+        <th width = "50px"><b>ID.</b></th>
+        <th width = "300px">Nombre</th>
+        <th>Carrera</th>
+        <th>Fecha de incio</th>
+        <th>Fecha de termino</th>
+        <th width = "200px">Action</th>
       </tr>
       
       @foreach ($study_plans as $study_plan)
@@ -36,11 +36,11 @@
           <td>{{$study_plan->date_end}}</td>
           <td>
           <form action="{{route('study_plan.destroy', $study_plan->id)}}" method="post">
-            <a class="btn btn-sm btn-success" href="{{route('study_plan.show',$study_plan->id)}}">Show</a>
-              <a class="btn btn-sm btn-warning" href="{{route('study_plan.edit',$study_plan->id)}}">Edit</a>
+            <a class="btn btn-sm btn-success" href="{{route('study_plan.show',$study_plan->id)}}">Detalle</a>
+              <a class="btn btn-sm btn-warning" href="{{route('study_plan.edit',$study_plan->id)}}">Editar</a>
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
             </form>
           </td>
         </tr>

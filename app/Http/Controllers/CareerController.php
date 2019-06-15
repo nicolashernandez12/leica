@@ -15,8 +15,7 @@ class CareerController extends Controller
     public function index()
     {
         $careers = Career::latest()->paginate(5);
-        return view('career.index', compact('careers'))
-                  ->with('i', (request()->input('page',1) -1)*5);
+        return view('career.index', compact('careers'));
     }
 
     /**
@@ -44,7 +43,7 @@ class CareerController extends Controller
   
           Career::create($request->all());
           return redirect()->route('career.index')
-                          ->with('success', 'new career created successfully');
+                          ->with('success', 'nueva carrera agregada exitosamente');
     }
 
     /**
@@ -90,7 +89,7 @@ class CareerController extends Controller
           $career->description = $request->get('description');
           $career->save();
           return redirect()->route('career.index')
-                          ->with('success', 'Career name updated successfully');
+                          ->with('success', 'carrera actualizada exitosamente');
     }
 
     /**
@@ -104,6 +103,6 @@ class CareerController extends Controller
         $career = Career::find($id);
         $career->delete();
         return redirect()->route('career.index')
-                        ->with('success', 'career deleted successfully');
+                        ->with('success', 'carrera eliminada exitosamente');
     }
 }

@@ -4,10 +4,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>List Software</h3>
+        <h3>Lista de Software</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('software.create')}}">Create New Software</a>
+        <a class="btn btn-sm btn-success" href="{{ route('software.create')}}">Agregar Software</a>
       </div>
     </div>
 
@@ -19,11 +19,11 @@
 
     <table class="table table-hover table-sm">
       <tr>
-        <th width = "50px"><b>No.</b></th>
-        <th>Name</th>
-        <th>Type</th>
+        <th width = "50px"><b>ID.</b></th>
+        <th>Nombre</th>
+        <th>Tipo</th>
         <th>Version</th>
-        <th width = "180px">Action</th>
+        <th width = "200px">Accion</th>
       </tr>
       
       @foreach ($softwares as $software)
@@ -34,11 +34,11 @@
           <td>{{$software->version}}</td>
           <td>
           <form action="{{route('software.destroy', $software->id)}}" method="post">
-            <a class="btn btn-sm btn-success" href="{{route('software.show',$software->id)}}">Show</a>
-              <a class="btn btn-sm btn-warning" href="{{route('software.edit',$software->id)}}">Edit</a>
+            <a class="btn btn-sm btn-success" href="{{route('software.show',$software->id)}}">Mostrar</a>
+              <a class="btn btn-sm btn-warning" href="{{route('software.edit',$software->id)}}">Editar</a>
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
             </form>
           </td>
         </tr>
