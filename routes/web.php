@@ -15,13 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Auth::routes(['register' => false]);
-Auth::routes();
+Auth::routes(['register' => false]);
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
-    //Auth::routes(['register' => true]);
+    //Auth::routes(['register' => false]);
     
     route::resource('career','CareerController');
     route::resource('study_plan','StudyPlanController');
@@ -52,4 +52,5 @@ Route::middleware('auth')->group(function () {
     route::resource('place_software','PlaceSoftwareController');
     route::resource('category','CategoryController');
     Route::get('/index', 'HomeController@index')->name('index'); 
+    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });

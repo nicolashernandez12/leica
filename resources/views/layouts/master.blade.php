@@ -122,10 +122,8 @@
                   <a href="#" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
+                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}">
+                      Cerrar sesión
                  </a>
                   {{-- <a href="#" class="btn btn-default btn-flat">Salir</a> --}}
                 </div>
@@ -264,7 +262,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('lists.inventory_place')}}"><i class="fa fa-circle-o"></i>Lista activo por lugar </a></li>
+            {{-- <li><a href="{{route('lists.inventory_place')}}"><i class="fa fa-circle-o"></i>Lista activo por lugar </a></li> --}}
           <li><a href="{{route('position.index')}}"><i class="fa fa-circle-o"></i> Cargo </a></li>
           </ul>
         </li>
