@@ -163,8 +163,9 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
+          <a href=" {{ route('index') }} ">
         <li class="header">Menu Principal</li>
-        
+          </a>
         <li class="active treeview">
             <i class="fa fa-laptop"></i>
             <a href=" {{ route('index') }} ">

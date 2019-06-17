@@ -36,12 +36,12 @@
           <div class="inner">
             <h3> + </h3>
 
-            <p> Agregar Nuevos usuarios</p>
+            <p> Administrar usuarios</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
           </div>
-          <a href="{{route('user.index')}}" class="small-box-footer">ir a Agregar<i class="fa fa-arrow-circle-right"></i></a>
+          <a href="{{route('user.index')}}" class="small-box-footer">ir <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
     

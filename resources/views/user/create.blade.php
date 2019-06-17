@@ -8,13 +8,23 @@
       </div>
     </div>
 
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <strong>Whoops! </strong> there where some problems with your input.<br>
+        <ul>
+          @foreach ($errors as $error)
+            <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
   <div>
 
     <div class="container">
       <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header">{{ __('Register') }}</div>
+                  {{-- <div class="card-header">{{ __('Register') }}</div> --}}
   
                   <div class="card-body">
                       <form method="POST" action="{{ route('user.store') }}">

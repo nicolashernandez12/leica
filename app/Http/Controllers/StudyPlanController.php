@@ -103,7 +103,7 @@ class StudyPlanController extends Controller
      */
     public function show($id)
     {
-        $study_plan = StudyPlan::with('actives', 'softwares')->where('id', $id)->get();
+        $study_plan = StudyPlan::with('equipment', 'softwarePlanStudy')->where('id', $id)->get();
         $study_plan = $study_plan->first();
         return view('study_plan.detail', compact('study_plan'));
     }

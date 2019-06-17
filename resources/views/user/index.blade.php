@@ -31,8 +31,7 @@
           <td>{{$user->email}}</td>
           <td>
           <form action="{{route('user.destroy', $user->id)}}" method="post">
-            <a class="btn btn-sm btn-success" href="{{route('user.show',$user->id)}}">Mostrar</a>
-              <a class="btn btn-sm btn-warning" href="{{route('user.edit',$user->id)}}">Editar</a>
+              <a class="btn btn-sm btn-warning" href="{{route('user.edit',$user->id)}}">Cambiar contraseñña</a>
               @csrf
               @method('DELETE')
               <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
@@ -41,6 +40,9 @@
         </tr>
       @endforeach
     </table>
+    <div class="col-md-12">
+        <a href="{{route('index')}}" class="btn btn-sm btn-success">Atras</a>
+      </div>
 
 {!! $users->links() !!}
   </div>

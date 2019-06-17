@@ -38,26 +38,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required'
-          ]);
-        // return Validator::make($request, [
-        //         // 'name' => ['required', 'string', 'max:255'],
-        //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        //         'password' => ['required', 'string', 'min:8', 'confirmed'],
-        //     ]);
-        
-        
-    }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            // 'name' => ['required', 'string', 'max:255'],
+        $request->validate([
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'password' => ['required', 'string', 'min:8', 'confirmed']
+          ]);
+
+        User::create([
+            //'name' => $data['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]); 
+        
+        return redirect()->route('user.index')
+        ->with('success', 'usuario agregado exitosamente');
+        
     }
 
     /**
@@ -79,7 +74,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = UserData::find($id);
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -91,7 +87,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'password' => ['required', 'string', 'min:8', 'confirmed']
+          ]);
+
+          $user = UserData::find($id);
+          $user->password = $request->get('password');
+        //   $password = Hash::make('secret');
+          $user->password= Hash::make($request['password']);
+          $user->save();
+          return redirect()->route('user.index')
+                          ->with('success', 'contraseña actualizada exitosamente');
     }
 
     /**
@@ -102,6 +108,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = UserData::find($id);
+        $user->delete();
+        return redirect()->route('user.index')
+                        ->with('success', 'usuario eliminado exitosamente');
     }
 }
