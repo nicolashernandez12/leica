@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3>Editar Carrera</h3>
+        <h3>Editar lugar</h3>
       </div>
     </div>
 
@@ -19,21 +19,21 @@
       </div>
     @endif
 
-    <form action="{{route('career.update',$career->id)}}" method="post">
+    <form action="{{route('place.update',$place->id)}}" method="post">
       @csrf
       @method('PUT')
       <div class="row">
         <div class="col-md-12">
           <strong>Nombre :</strong>
-          <input type="text" name="career_name" class="form-control" value="{{$career->career_name}}">
+          <input type="text" name="place_name" class="form-control" value="{{$place->place_name}}">
         </div>
         <div class="col-md-12">
           <strong>Descripcion :</strong>
-          <textarea class="form-control" name="description" rows="8" cols="80">{{$career->description}}</textarea>
+          <textarea class="form-control" name="description" rows="8" cols="80">{{$place->description}}</textarea>
         </div>
 
         <div class="col-md-12">
-          <a href="{{route('career.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <a href="{{route('place.index')}}" class="btn btn-sm btn-success">Atras</a>
           <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>

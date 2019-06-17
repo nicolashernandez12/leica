@@ -51,6 +51,8 @@ Route::middleware('auth')->group(function () {
     route::resource('software_plan_study','SoftwarePlanStudyController');
     route::resource('place_software','PlaceSoftwareController');
     route::resource('category','CategoryController');
+    route::resource('user','UserController');
     Route::get('/index', 'HomeController@index')->name('index'); 
     Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+    
 });
