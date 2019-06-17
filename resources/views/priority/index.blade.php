@@ -2,7 +2,7 @@
 
 @section('dentro_de_master')
 
-  <div class="container">
+  <div class="container" style="padding:1%">
     <div class="row">
       <div class="col-md-10">
         <h3>List priority</h3>
@@ -20,7 +20,7 @@
 
     <table class="table table-hover table-sm">
       <tr>
-        <th width = "50px"><b>No.</b></th>
+        <th width = "50px"><b>ID.</b></th>
         <th width = "300px">Name</th>
         <th>Description</th>
         <th width = "180px">Action</th>
@@ -28,7 +28,7 @@
 
       @foreach ($priorities as $priority)
         <tr>
-          <td><b>{{++$i}}.</b></td>
+          <td><b>{{$priority->id}}.</b></td>
           <td>{{$priority->priority_name}}</td>
           <td>{{$priority->description}}</td>
           <td>

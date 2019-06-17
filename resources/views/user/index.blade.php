@@ -8,10 +8,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>Lista de Carreras</h3>
+        <h3>Lista de usuarios</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('career.create')}}">Agregar Carrera</a>
+        <a class="btn btn-sm btn-success" href="{{ route('user.register')}}">Agregar Usuario</a>
       </div>
     </div>
 
@@ -29,15 +29,15 @@
         <th width = "210px">Accion</th>
       </tr>
 
-      @foreach ($careers as $career)
+      @foreach ($users as $user)
         <tr>
-          <td><b>{{$career->id}}.</b></td>
-          <td>{{$career->career_name}}</td>
-          <td>{{$career->description}}</td>
+          <td><b>{{$user->id}}.</b></td>
+          <td>{{$user->user_name}}</td>
+          <td>{{$user->description}}</td>
           <td>
-          <form action="{{route('career.destroy', $career->id)}}" method="post">
-            <a class="btn btn-sm btn-success" href="{{route('career.show',$career->id)}}">Mostrar</a>
-            <a class="btn btn-sm btn-warning" href="{{route('career.edit',$career->id)}}">Editar</a>
+          <form action="{{route('user.destroy', $user->id)}}" method="post">
+            <a class="btn btn-sm btn-success" href="{{route('user.show',$user->id)}}">Mostrar</a>
+            <a class="btn btn-sm btn-warning" href="{{route('user.edit',$user->id)}}">Editar</a>
               @csrf
               @method('DELETE')
             <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
@@ -47,6 +47,6 @@
       @endforeach
     </table>
 
-{!! $careers->links() !!}
+{!! $users->links() !!}
   </div>
 @endsection

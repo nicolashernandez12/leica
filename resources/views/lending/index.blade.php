@@ -26,7 +26,7 @@
         <th>Fecha de prestamo</th>
         <th>F. Devolucion propuesta</th>
         <th>F Devolucion real</th>
-        <th width = "400px">Action</th>
+        <th width = "350px">Action</th>
       </tr>
       
       @foreach ($lendings as $lending)
@@ -43,6 +43,9 @@
               <a class="btn btn-sm btn-warning" href="{{route('lending.edit',$lending->id)}}">Editar</a>
               <a class="btn btn-sm btn-warning" href="{{route('lending.edit',$lending->id)}}">Registrar Devolucion</a>
               @csrf
+              {{-- <form action="{{route('lending.edit', $lending->id)}}" method="post">
+                <button type="submit" class="btn btn-sm btn-warning">Registrar Devolucion</button>
+              </form> --}}
               @method('DELETE')
               <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
             </form>

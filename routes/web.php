@@ -15,12 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes(['register' => false]);
+//Auth::routes(['register' => false]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
+    //Auth::routes(['register' => true]);
+    
     route::resource('career','CareerController');
     route::resource('study_plan','StudyPlanController');
     route::resource('model','ModeloController');
@@ -48,5 +50,6 @@ Route::middleware('auth')->group(function () {
     route::resource('difference_inventory','DifferenceInventoryController');
     route::resource('software_plan_study','SoftwarePlanStudyController');
     route::resource('place_software','PlaceSoftwareController');
+    route::resource('category','CategoryController');
     Route::get('/index', 'HomeController@index')->name('index'); 
 });

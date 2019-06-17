@@ -20,7 +20,7 @@
 
     <table class="table table-hover table-sm">
       <tr>
-        <th width = "50px"><b>No.</b></th>
+        <th width = "50px"><b>ID.</b></th>
         <th width = "300px">Name</th>
         <th>Description</th>
         <th width = "180px">Action</th>
@@ -28,7 +28,7 @@
 
       @foreach ($frequencies as $frequency)
         <tr>
-          <td><b>{{++$i}}.</b></td>
+          <td><b>{{$frequency->id}}.</b></td>
           <td>{{$frequency->frequency_name}}</td>
           <td>{{$frequency->description}}</td>
           <td>

@@ -21,6 +21,11 @@ class Inventory extends Model
         return $this->belongsTo('App\State', 'id_state','id');
     }
 
+    public function place()
+    {
+        return $this->belongsTo('App\Place', 'id_place','id');
+    }
+
     //primaria
     public function loanRegistration()
     {

@@ -52,6 +52,17 @@
             <input type="hidden" name="id_user" class="form-control" value="{{ Auth::user()->id }}">
           </div>
 
+        
+        <div class="col-md-12">
+            <strong>Inventario: </strong>
+            <select class="form-control" name="inventories[]" multiple>
+                @foreach ($inventories as $inventory)
+                    <option value="{{$inventory->id}}">{{$inventory->activeInput->input_name}}</option>
+                @endforeach
+            </select>
+        </div>
+        
+
         <div class="col-md-12">
             <strong>Fecha prestamo:</strong>
             <input type="date" name="loan_date" class="form-control">

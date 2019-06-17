@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Lending;
 use App\UserData;
 use App\Liable;
+use App\Inventory;
 use Illuminate\Http\Request;
 
 class LendingController extends Controller
@@ -28,7 +29,8 @@ class LendingController extends Controller
     {
         $liables = Liable::all();
         $users = UserData::all();
-        return view('lending.create', compact('liables','users'));
+        $inventories = Inventory::all();
+        return view('lending.create', compact('liables','users','inventories'));
     }
 
     /**
@@ -45,10 +47,34 @@ class LendingController extends Controller
             'loan_date' => 'required',
             'supposed_return_date' => 'required',
           ]);
-          
-          Lending::create($request->all());
-          return redirect()->route('lending.index')
-                          ->with('success', 'prestamo agregado exitosamente');
+
+          $lending = new Lending();
+          $lending->id_liable = $request->get('id_liable');
+          $lending->id_user = $request->get('id_user');
+          $lending->loan_date = $request->get('loan_date');
+          $lending->supposed_return_date= $request->get('supposed_return_date');
+          $lending->save();
+        
+          $lending = $lending->id;
+
+        if ($request->has('inventories')) {
+            $softwares = $request->get('inventories');
+              foreach ($inventories as $inventory) {
+                  $new_assign_inventory = new LoanRegistration();
+                  $new_assign_inventory->id_inventory = $inventory;
+                  $new_assign_inventory->id_lending = $lending;
+                  $new_assign_inventory->save();
+              }
+  
+        }
+
+        return redirect()->route('lending.index')
+        ->with('success', 'prestamo agregado exitosamente');
+
+
+        //   Lending::create($request->all());
+        //   return redirect()->route('lending.index')
+        //                   ->with('success', 'prestamo agregado exitosamente');
     }
 
     /**

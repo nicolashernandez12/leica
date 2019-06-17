@@ -20,6 +20,11 @@ class ActiveInput extends Model
         return $this->belongsTo('App\Modelo', 'id_model','id');
     }
 
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'id_category','id');
+    }
+
     public function maintenancePlan()
     {
         return $this->belongsTo('App\MaintenancePlan', 'id_maintenance_plan','id');

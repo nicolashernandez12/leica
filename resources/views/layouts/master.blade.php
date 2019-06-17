@@ -124,7 +124,7 @@
                 <div class="pull-right">
                     <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();"> --}}
+                                  document.getElementById('logout-form').submit();">
                       {{ __('Logout') }}
                  </a>
                   {{-- <a href="#" class="btn btn-default btn-flat">Salir</a> --}}
@@ -148,12 +148,12 @@
           <img src="dist/img/nicolas.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Nicolas Hernandez</p>
+          <p>{{ Auth::user()->email }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      {{-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="busqueda ...">
           <span class="input-group-btn">
@@ -161,7 +161,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> --}}
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -183,9 +183,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Softwares</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Consumibles</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Equipos</a></li>
+            <li><a href="{{route('software.index')}}"><i class="fa fa-circle-o"></i> Softwares</a></li>
+            <li><a href="{{route('software_type.index')}}"><i class="fa fa-circle-o"></i> Tipo de software</a></li>
+            <li><a href="{{route('active_input.index')}}"><i class="fa fa-circle-o"></i> Equipo</a></li>
+            <li><a href="{{route('inventory.index')}}"><i class="fa fa-circle-o"></i> Inventario</a></li>
+            <li><a href="{{route('category.index')}}"><i class="fa fa-circle-o"></i> Categoria</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -197,7 +199,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{route('lending.index')}}"><i class="fa fa-circle-o"></i> Registrar Prestamo </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Docentes </a></li>
+            <li><a href="{{route('lending.index')}}"><i class="fa fa-circle-o"></i> Revisar Prestamos </a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -208,13 +210,51 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Varios </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> softwares </a></li>
-          <li><a href="{{route('career.index')}}"><i class="fa fa-circle-o"></i> Carrera </a></li>
+            <li><a href="{{route('place.index')}}"><i class="fa fa-circle-o"></i>Lugar</a></li>
+          <li><a href="{{route('state.index')}}"><i class="fa fa-circle-o"></i> Estado </a></li>
           </ul>
         </li>
-   
-  
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"></i> <span>Mantencion</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+              <li><a href="{{route('maintenance.index')}}"><i class="fa fa-circle-o"></i> Registro de mantenciones</a></li>
+            <li><a href="{{route('maintenance_plan.index')}}"><i class="fa fa-circle-o"></i> Plan de Mantencion </a></li>
+            <li><a href="{{route('frequency.index')}}"><i class="fa fa-circle-o"></i> Frecuencia </a></li>
+          <li><a href="{{route('priority.index')}}"><i class="fa fa-circle-o"></i> Prioridad </a></li>
+          <li><a href="{{route('reason.index')}}"><i class="fa fa-circle-o"></i> Razon </a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="#">
+              <i class="fa fa-book"></i> <span>Plan de estudio</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{{route('career.index')}}"><i class="fa fa-circle-o"></i>Carera </a></li>
+            <li><a href="{{route('study_plan.index')}}"><i class="fa fa-circle-o"></i> Planes de estudio </a></li>
+            </ul>
+          </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"></i> <span>Personal</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('liable.index')}}"><i class="fa fa-circle-o"></i>Registro de responsable </a></li>
+          <li><a href="{{route('position.index')}}"><i class="fa fa-circle-o"></i> Cargo </a></li>
+          </ul>
+        </li>
        
      
        
@@ -225,10 +265,9 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-   
-
-    @yield('dentro_de_master')
-
+    <div class="container" style="padding:1%">
+      @yield('dentro_de_master')
+    </div>
 
   </div>
   <!-- /.content-wrapper -->
