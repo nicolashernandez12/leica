@@ -37,6 +37,33 @@
                 </div>
             </div>
 
+
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Software: </strong>
+                    <select class="form-control" name="softwares[]" multiple>
+                        @foreach ($softwares as $software)
+                            <option value="{{$software->id}}">{{$software->name_software}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Actives: </strong>
+                    <select class="form-control" name="actives[]" multiple>
+                        @foreach ($active_inputs as $actives)
+                            <option value="{{$actives->id}}">{{$actives->input_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
+
+
+
             <div class="row">
                 <div class="col-md-12">
                     <strong>Fecha de incio :</strong>

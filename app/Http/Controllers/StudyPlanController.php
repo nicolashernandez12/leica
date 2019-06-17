@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\ActiveInput;
-use App\ActivesByStudyPlan;
+use App\EquipmentPlanStudy;
 use App\Software;
-use App\SoftwareByStudyPlan;
+use App\SoftwarePlanStudy;
 use App\StudyPlan;
 use App\Career;
 use Illuminate\Http\Request;
@@ -31,10 +31,11 @@ class StudyPlanController extends Controller
     public function create()
     {
         $careers = Career::all();
+
         $active_inputs = ActiveInput::all();
         $softwares = Software::all();
-        return view('study_plan.create',
-            compact('careers', 'active_inputs', 'softwares'));
+
+        return view('study_plan.create', compact('careers', 'active_inputs', 'softwares'));
     }
 
     /**
@@ -60,8 +61,40 @@ class StudyPlanController extends Controller
         $study_plan->date_end = $request->get('date_end');
         $study_plan->save();
 
+        $study_plan_id = $study_plan->id;
+
+        if ($request->has('softwares')) {
+            $softwares = $request->get('softwares');
+            foreach ($softwares as $software) {
+                $new_assign_software = new SoftwarePlanStudy();
+                $new_assign_software->id_software = $software;
+                $new_assign_software->id_study_plan = $study_plan_id;
+                $new_assign_software->save();
+            }
+
+        }
+
+        if ($request->has('actives')) {
+            $actives = $request->get('actives');
+            foreach ($actives as $active) {
+                $new_assign_active = new EquipmentPlanStudy();
+                $new_assign_active->id_active_input = $active;
+                $new_assign_active->id_study_plan = $study_plan_id;
+                $new_assign_active->save();
+            }
+        }
+        
         return redirect()->route('study_plan.index')
             ->with('success', 'plan de estudio agregado exitosamente');
+    }
+
+    public function createEquipment($actives, $id){
+        foreach ($actives as $active) {
+            $new_assign_active = new EquipmentPlanStudy();
+            $new_assign_active->id_active_input = $active;
+            $new_assign_active->id_study_plan = $study_plan_id;
+            $new_assign_active->save();
+        } 
     }
 
     /**
@@ -83,12 +116,23 @@ class StudyPlanController extends Controller
     {
         $study_plan = StudyPlan::find($id);
         $careers = Career::all();
+        $actives = ActiveInput::all();
+        $softwares = Software::all();
 
-        return view('study_plan.edit')
-         ->with('study_plan', $study_plan)->with('careers', $careers);
+        $actives_ids = [];
+        $software_ids = [];
+
+        foreach ($study_plan->equipment as $active) {
+            array_push($actives_ids, $active->id_active_input);
+        }
+        foreach ($study_plan->softwarePlanStudy as $software) {
+            array_push($software_ids, $software->id_software);
+        }
+
+        return view('study_plan.edit',compact('study_plan','careers', 'actives', 'softwares', 'actives_ids', 'software_ids'));
     }
 
-    /**
+    /** 
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -110,6 +154,33 @@ class StudyPlanController extends Controller
         $study_plan->date_end = $request->get('date_end');
         $study_plan->save();
 
+        if ($request->has('softwares')) {
+            $softwares = $request->get('softwares');
+            foreach ($study_plan->softwarePlanStudy as $software) {
+                $software->delete();
+            }
+            foreach($softwares as $software){
+                $new_assign_software = new SoftwarePlanStudy();
+                $new_assign_software->id_software = $software;
+                $new_assign_software->id_study_plan = $id;
+                $new_assign_software->save();
+            }
+            
+        }
+
+        if ($request->has('actives')) {
+            $actives = $request->get('actives');
+            foreach ($study_plan->equipment as $active) {
+                $active->delete();
+            }
+            foreach ($actives as $active) {
+                $new_assign_active = new EquipmentPlanStudy();
+                $new_assign_active->id_active_input = $active;
+                $new_assign_active->id_study_plan = $id;
+                $new_assign_active->save();
+            }
+        }
+        
         return redirect()->route('study_plan.index')
             ->with('success', 'plan de estudio actualizado exitosamente');
     }

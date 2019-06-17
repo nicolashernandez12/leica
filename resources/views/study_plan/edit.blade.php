@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -39,6 +40,41 @@
                     </select>
                 </div>
             </div>
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Actives: </strong>
+                    <select class="form-control" name="actives[]" multiple>
+                        @foreach ($actives as $active)
+                            @if(in_array($active->id, $actives_ids))
+                                <option selected value="{{$active->id}}">{{$active->input_name}}</option>
+                            @else
+                                <option value="{{$active->id}}">{{$active->input_name}}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Software: </strong>
+                    <select class="form-control" name="softwares[]" multiple>
+                        @foreach ($softwares as $software)
+                            @if(in_array($software->id, $software_ids))
+                                <option selected value="{{$software->id}}">{{$software->name_software}}</option>
+                            @else
+                                <option value="{{$software->id}}">{{$software->name_software}}</option>
+                            @endif
+
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
+
 
 
             <div class="row">
