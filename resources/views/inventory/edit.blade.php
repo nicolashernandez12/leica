@@ -48,6 +48,16 @@
                 @endforeach
             </select>
           </div>
+
+          <div class="col-md-12">
+            <strong>Lugar: </strong>
+            <select class="form-control" name="id_place">
+              <option selected value="{{$inventory->place->id}}">{{$inventory->place->place_name}}</option>
+                @foreach ($places as $place)
+              <option value="{{$place->id}}">{{$place->place_name}}</option>
+                @endforeach
+            </select>
+          </div>
           
           <div class="col-md-12">
           <strong>Observation :</strong>

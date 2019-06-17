@@ -26,8 +26,8 @@
           <strong>Name:</strong>
           <input type="text" name="model_name" class="form-control" placeholder="model name">
         </div>
-        <div class="row">
-          <div class="col-md-12">
+        
+          <div class="col-md-10">
             <strong>trademark: </strong>
             <select class="form-control" name="id_trademark">
               @foreach ($trademarks as $trademark)
@@ -35,7 +35,13 @@
               @endforeach
             </select>
           </div>
-        </div>
+          
+          <div class="col-md-2">
+            <br>
+              <a href="{{route('trademark.create')}}" class="btn btn-sm btn-success form-control">Agregar marca</a>
+          </div>
+
+
         <div class="col-md-12">
           <strong>Description :</strong>
           <textarea class="form-control" placeholder="description" name="description" rows="8" cols="80"></textarea>

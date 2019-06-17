@@ -34,7 +34,7 @@
             </select>
           </div>
           <div class="col-md-2">
-              <strong>  </strong>
+            <br>
               <a href="{{route('liable.create')}}" class="btn btn-sm btn-success form-control">Agregar responsable</a>
           </div>
 

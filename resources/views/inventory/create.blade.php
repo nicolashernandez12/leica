@@ -24,13 +24,18 @@
       @csrf
       <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-md-10">
           <strong>Active Input Name: </strong>
           <select class="form-control" name="id_active_input">
             @foreach ($active_inputs as $active_input)
             <option value="{{$active_input->id}}">{{$active_input->input_name}}</option>
             @endforeach
           </select>
+        </div>
+
+        <div class="col-md-2">
+          <br>
+            <a href="{{route('active_input.create')}}" class="btn btn-sm btn-success form-control">Agregar activo</a>
         </div>
 
         <div class="col-md-12">
@@ -43,13 +48,32 @@
           <textarea class="form-control" placeholder="observation" name="observation" rows="4" cols="80"></textarea>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-10">
           <strong>State: </strong>
           <select class="form-control" name="id_state">
             @foreach ($states as $state)
             <option value="{{$state->id}}">{{$state->state_name}}</option>
             @endforeach
           </select>
+        </div>
+
+        <div class="col-md-2">
+          <br>
+            <a href="{{route('state.create')}}" class="btn btn-sm btn-success form-control">Agregar estado</a>
+        </div>
+
+        <div class="col-md-10">
+          <strong>Lugar: </strong>
+          <select class="form-control" name="id_place">
+            @foreach ($places as $place)
+            <option value="{{$place->id}}">{{$place->place_name}}</option>
+            @endforeach
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <br>
+            <a href="{{route('place.create')}}" class="btn btn-sm btn-success form-control">Agregar lugar</a>
         </div>
 
         <div class="col-md-12">

@@ -47,6 +47,6 @@
       @endforeach
     </table>
 
-{!! $categorys->links() !!}
+
   </div>
 @endsection

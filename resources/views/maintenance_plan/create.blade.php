@@ -32,8 +32,7 @@
           <textarea class="form-control" placeholder="description" name="description" rows="8" cols="80"></textarea>
         </div>
         
-        <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-10">
             <strong>frequency: </strong>
             <select class="form-control" name="id_frequency">
               @foreach ($frequencies as $frequency)
@@ -41,9 +40,14 @@
               @endforeach
             </select>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
+
+          <div class="col-md-2">
+            <br>
+              <a href="{{route('frequency.create')}}" class="btn btn-sm btn-success form-control">Agregar frecuencia</a>
+          </div>
+
+        
+          <div class="col-md-10">
             <strong>priority: </strong>
             <select class="form-control" name="id_priority">
               @foreach ($priorities as $priority)
@@ -51,7 +55,13 @@
               @endforeach
             </select>
           </div>
-        </div>
+        
+          <div class="col-md-2">
+            <br>
+              <a href="{{route('priority.create')}}" class="btn btn-sm btn-success form-control">Agregar priority</a>
+          </div>
+
+
         <div class="col-md-12">
           <a href="{{route('maintenance_plan.index')}}" class="btn btn-sm btn-success">Back</a>
           <button type="submit" class="btn btn-sm btn-primary">Submit</button>

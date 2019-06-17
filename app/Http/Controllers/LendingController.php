@@ -6,6 +6,7 @@ use App\Lending;
 use App\UserData;
 use App\Liable;
 use App\Inventory;
+use App\LoanRegistration;
 use Illuminate\Http\Request;
 
 class LendingController extends Controller
@@ -58,7 +59,7 @@ class LendingController extends Controller
           $lending = $lending->id;
 
         if ($request->has('inventories')) {
-            $softwares = $request->get('inventories');
+            $inventories = $request->get('inventories');
               foreach ($inventories as $inventory) {
                   $new_assign_inventory = new LoanRegistration();
                   $new_assign_inventory->id_inventory = $inventory;

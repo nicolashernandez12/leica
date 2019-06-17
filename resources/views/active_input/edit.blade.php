@@ -74,6 +74,16 @@
         </div>
 
         <div class="col-md-12">
+          <strong>Categoria: </strong>
+          <select class="form-control" name="id_categoria">
+            <option selected value="{{$active_input->category->id}}">{{$active_input->category->category_name}}</option>
+              @foreach ($categories as $category)
+            <option value="{{$category->id}}">{{$category->category_name}}</option>
+              @endforeach
+          </select>
+      </div>
+
+        <div class="col-md-12">
           <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Atras</a>
           <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>

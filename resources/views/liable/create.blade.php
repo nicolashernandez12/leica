@@ -40,7 +40,7 @@
           <input type="text" name="rut" class="form-control" placeholder="xxxxxxxx-x">
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-10">
           <strong>Position: </strong>
           <select class="form-control" name="id_position">
             @foreach ($positions as $position)
@@ -49,10 +49,16 @@
           </select>
         </div>
 
+        <div class="col-md-2">
+          <br>
+            <a href="{{route('position.create')}}" class="btn btn-sm btn-success form-control">Agregar cargo</a>
+        </div>
+
+
         <div class="col-md-12">
           <a href="{{route('liable.index')}}" class="btn btn-sm btn-success">Lista responsable</a>
           <a href="{{route('lending.create')}}" class="btn btn-sm btn-success">Agregar prestamo</a>
-          <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+          <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>
     </form>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ActiveInput;
 use App\Modelo;
 use App\MaintenancePlan;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ActiveInputController extends Controller
@@ -28,9 +29,10 @@ class ActiveInputController extends Controller
      */
     public function create()
     {
+        $categories = Category::all();
         $models = Modelo::all();
         $maintenance_plans = MaintenancePlan::all();
-        return view('active_input.create', compact('models','maintenance_plans'));
+        return view('active_input.create', compact('models','maintenance_plans','categories'));
     }
 
     /**
@@ -46,6 +48,7 @@ class ActiveInputController extends Controller
             'uf_value' => 'required',
             'serial_number' => 'required',
             'id_model' => 'required',
+            'id_category' => 'required',
             'id_maintenance_plan' => 'required'
           ]);
   
@@ -76,8 +79,9 @@ class ActiveInputController extends Controller
     {
         $active_input = ActiveInput::find($id);
         $models = Modelo::all();
+        $categories = Category::all();
         $maintenance_plans = MaintenancePlan::all();
-        return view('active_input.edit')->with('active_input',$active_input)->with('models',$models)
+        return view('active_input.edit')->with('active_input',$active_input)->with('models',$models)->with('categories',$categories)
                                                                                         ->with('maintenance_plans',$maintenance_plans);
     }
 
@@ -95,6 +99,7 @@ class ActiveInputController extends Controller
             'id_model' => 'required',
             'id_maintenance_plan' => 'required',
             'serial_number' => 'required',
+            'id_category' => 'required',
             'uf_value' => 'required'
           ]);
           $active_input = ActiveInput::find($id);
@@ -105,6 +110,7 @@ class ActiveInputController extends Controller
           $active_input->description = $request->get('description');
           $active_input->serial_number = $request->get('serial_number');
           $active_input->id_model = $request->get('id_model');
+          $active_input->id_category = $request->get('id_category');
           $active_input->id_maintenance_plan = $request->get('id_maintenance_plan');
           $active_input->save();
           return redirect()->route('active_input.index')

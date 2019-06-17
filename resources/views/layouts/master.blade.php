@@ -198,7 +198,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('lending.index')}}"><i class="fa fa-circle-o"></i> Registrar Prestamo </a></li>
+            <li><a href="{{route('lending.create')}}"><i class="fa fa-circle-o"></i> Registrar Prestamo </a></li>
             <li><a href="{{route('lending.index')}}"><i class="fa fa-circle-o"></i> Revisar Prestamos </a></li>
           </ul>
         </li>
@@ -252,6 +252,19 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{route('liable.index')}}"><i class="fa fa-circle-o"></i>Registro de responsable </a></li>
+          <li><a href="{{route('position.index')}}"><i class="fa fa-circle-o"></i> Cargo </a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-book"></i> <span>Listas</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('lists.inventory_place')}}"><i class="fa fa-circle-o"></i>Lista activo por lugar </a></li>
           <li><a href="{{route('position.index')}}"><i class="fa fa-circle-o"></i> Cargo </a></li>
           </ul>
         </li>

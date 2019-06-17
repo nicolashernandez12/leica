@@ -53,7 +53,7 @@
             <input type="text" name="serial_number" class="form-control" placeholder="serial number" required="required">
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-10">
             <strong>Modelo: </strong>
             <select class="form-control" name="id_model">
               @foreach ($models as $model)
@@ -62,7 +62,12 @@
             </select>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-2">
+          <br>
+            <a href="{{route('model.create')}}" class="btn btn-sm btn-success form-control">Agregar modelo</a>
+        </div>
+
+        <div class="col-md-10">
             <strong>Plan de mantencion: </strong>
             <select class="form-control" name="id_maintenance_plan">
               @foreach ($maintenance_plans as $maintenance_plan)
@@ -70,6 +75,25 @@
               @endforeach
             </select>
         </div>
+
+        <div class="col-md-2">
+          <br>
+            <a href="{{route('maintenance_plan.create')}}" class="btn btn-sm btn-success form-control">Agregar plan de mantencion</a>
+        </div>
+
+        <div class="col-md-10">
+          <strong>Categoria: </strong>
+          <select class="form-control" name="id_category">
+            @foreach ($categories as $category)
+            <option value="{{$category->id}}">{{$category->category_name}}</option>
+            @endforeach
+          </select>
+      </div>
+
+      <div class="col-md-2">
+        <br>
+          <a href="{{route('category.create')}}" class="btn btn-sm btn-success form-control">Agregar categoria</a>
+      </div>
 
         <div class="col-md-12">
           <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Atras</a>
