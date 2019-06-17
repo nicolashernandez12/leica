@@ -1,10 +1,12 @@
-@extends('layouts.app')
-@section('content')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+@extends('layouts.master')
+
+@section('dentro_de_master')
+
+{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3>New lending</h3>
+        <h3>Agregar Prestamo</h3>
       </div>
     </div>
 
@@ -24,7 +26,7 @@
       <div class="row">
        
         <div class="col-md-10">
-            <strong>Name Liable: </strong>
+            <strong>Nombre responsable: </strong>
             <select class="form-control" name="id_liable">
               @foreach ($liables as $liable)
                 <option value="{{$liable->id}}">{{$liable->name_person}} {{$liable->last_name_person}}</option>
@@ -32,25 +34,31 @@
             </select>
           </div>
           <div class="col-md-2">
-              <a href="{{route('liable.create')}}" class="btn btn-sm btn-success">New Liable</a>
+              <strong>  </strong>
+              <a href="{{route('liable.create')}}" class="btn btn-sm btn-success form-control">Agregar responsable</a>
+          </div>
+
+        {{-- <div class="col-md-12">
+          <strong>Usuario: </strong>
+          <select class="form-control" name="id_user">
+            @foreach ($users as $user)
+              <option value="{{$user->id}}">{{$user->email}}</option>
+            @endforeach
+          </select>
+        </div> --}}
+
+        <div class="col-md-12">
+            {{-- <strong>Usuario:</strong> --}}
+            <input type="hidden" name="id_user" class="form-control" value="{{ Auth::user()->id }}">
           </div>
 
         <div class="col-md-12">
-          <strong>User: </strong>
-          <select class="form-control" name="id_user">
-            @foreach ($users as $user)
-              <option value="{{$user->id}}">{{$user->liable->name_person}} {{$user->liable->last_name_person}}</option>
-            @endforeach
-          </select>
-        </div>
-
-        <div class="col-md-12">
-            <strong>Loan Date:</strong>
+            <strong>Fecha prestamo:</strong>
             <input type="date" name="loan_date" class="form-control">
           </div>
 
-        <div class="col-md-6">
-            <strong>Supposed Return Date:</strong>
+        <div class="col-md-12">
+            <strong>Fecha de regreso propuesta:</strong>
             <input type="date" name="supposed_return_date" class="form-control">
         </div>
 
@@ -60,8 +68,8 @@
         </div> --}}
 
         <div class="col-md-12">
-          <a href="{{route('lending.index')}}" class="btn btn-sm btn-success">Back</a>
-          <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+          <a href="{{route('lending.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>
     </form>

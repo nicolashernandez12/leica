@@ -1,6 +1,8 @@
-@extends('layouts.app')
-@section('content')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+@extends('layouts.master')
+
+@section('dentro_de_master')
+
+{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -48,7 +50,8 @@
         </div>
 
         <div class="col-md-12">
-          <a href="{{route('liable.index')}}" class="btn btn-sm btn-success">Back</a>
+          <a href="{{route('liable.index')}}" class="btn btn-sm btn-success">Lista responsable</a>
+          <a href="{{route('lending.create')}}" class="btn btn-sm btn-success">Agregar prestamo</a>
           <button type="submit" class="btn btn-sm btn-primary">Submit</button>
         </div>
       </div>

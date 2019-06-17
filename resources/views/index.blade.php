@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('dentro_de_master')
+
 <section class="content-header">
     <h1>
       Panel de Control

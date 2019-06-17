@@ -43,7 +43,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+  <a href="{{route('index')}}" class="logo">
       <span class="logo-lg">Leica Inacap</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -60,7 +60,8 @@
    
             
           <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
+
+          {{-- <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">2</span>
@@ -84,23 +85,25 @@
                 </ul>
               </li>
             </ul>
-          </li>
+          </li> --}}
+
+
           <!-- Tasks: style can be found in dropdown.less -->
          
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/nicolas.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Nicolas Hernandez</span>
+              {{-- <img src="#" class="user-image" alt="User Image"> --}}
+              <span class="hidden-xs">{{ Auth::user()->email }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/nicolas.jpg" class="img-circle" alt="User Image">
+                {{-- <img src="#" class="img-circle" alt="User Image"> --}}
 
                 <p>
-                  Nicolas Hernandez - quality assurance
-                  <small>alumno inacap</small>
+                    {{ Auth::user()->email }}
+                  <small>Usuario</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -119,7 +122,12 @@
                   <a href="#" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Salir</a>
+                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();"> --}}
+                      {{ __('Logout') }}
+                 </a>
+                  {{-- <a href="#" class="btn btn-default btn-flat">Salir</a> --}}
                 </div>
               </li>
             </ul>
@@ -158,14 +166,15 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu Principal</li>
+        
         <li class="active treeview">
-          <a href=" {{ route('index') }} ">
             <i class="fa fa-laptop"></i>
+            <a href=" {{ route('index') }} ">
              <span>panel de control</span>
-          </a>
+            </a>
      
         </li>
-
+     
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Activos</span>
@@ -187,7 +196,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Alumnos </a></li>
+            <li><a href="{{route('lending.index')}}"><i class="fa fa-circle-o"></i> Registrar Prestamo </a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Docentes </a></li>
           </ul>
         </li>
@@ -201,6 +210,7 @@
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Varios </a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> softwares </a></li>
+          <li><a href="{{route('career.index')}}"><i class="fa fa-circle-o"></i> Carrera </a></li>
           </ul>
         </li>
    
