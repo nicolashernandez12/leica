@@ -93,13 +93,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              {{-- <img src="#" class="user-image" alt="User Image"> --}}
+             <img src="img/inacapp.jpg" class="user-image" alt="User Image"> 
               <span class="hidden-xs">{{ Auth::user()->email }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                {{-- <img src="#" class="img-circle" alt="User Image"> --}}
+                 <img src="img/inacapp.jpg" class="img-circle" alt="User Image">
 
                 <p>
                     {{ Auth::user()->email }}
@@ -143,7 +143,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/nicolas.jpg" class="img-circle" alt="User Image">
+          <img src="img/inacapp.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->email }}</p>
@@ -163,7 +163,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">Menu Principal</li>
+        <a href="{{route('index')}}" class="header">Menu Principal</a>
         
         <li class="active treeview">
             <i class="fa fa-laptop"></i>
