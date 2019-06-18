@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>Lista de categoria</h3>
+        <h3>Lista de categorias</h3>
       </div>
       <div class="col-sm-2">
         <a class="btn btn-sm btn-success" href="{{ route('category.create')}}">Agregar categoria</a>
@@ -25,8 +25,8 @@
       <tr>
         <th width = "50px"><b>ID.</b></th>
         <th width = "300px">Nombre</th>
-        <th >Descripcion</th>
-        <th width = "210px">Accion</th>
+        <th >Descripción</th>
+        <th width = "210px">Acción</th>
       </tr>
 
       @foreach ($categories as $category)

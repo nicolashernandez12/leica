@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3>Editar activo inzumo</h3>
+        <h3>Editar activo insumo</h3>
       </div>
     </div>
 
@@ -39,12 +39,12 @@
         </div>
 
         <div class="col-md-12">
-            <strong>Observacion :</strong>
+            <strong>Observación :</strong>
             <textarea class="form-control" value="{{$active_input->observation}}" name="observation" rows="4" cols="80"></textarea>
         </div>
 
         <div class="col-md-12">
-            <strong>Descripcion :</strong>
+            <strong>Descripción :</strong>
             <textarea class="form-control" value="{{$active_input->description}}" name="description" rows="4" cols="80"></textarea>
         </div>
 
@@ -84,7 +84,7 @@
       </div>
 
         <div class="col-md-12">
-          <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Atrás</a>
           <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>

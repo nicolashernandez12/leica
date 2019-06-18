@@ -28,12 +28,12 @@
           <input type="text" name="category_name" class="form-control" value="{{$category->category_name}}">
         </div>
         <div class="col-md-12">
-          <strong>Descripcion :</strong>
+          <strong>Descripción :</strong>
           <textarea class="form-control" name="description" rows="8" cols="80">{{$category->description}}</textarea>
         </div>
 
         <div class="col-md-12">
-          <a href="{{route('category.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <a href="{{route('category.index')}}" class="btn btn-sm btn-success">Atrás</a>
           <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>

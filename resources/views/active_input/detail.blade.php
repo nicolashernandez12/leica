@@ -48,7 +48,7 @@
 
       <div class="col-md-12">
           <div class="form-group">
-              <strong>Observacion : </strong> {{$active_input->observation}}
+              <strong>Observación : </strong> {{$active_input->observation}}
           </div>
       </div>
 
@@ -60,7 +60,7 @@
 
 
       <div class="col-md-12">
-        <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Atras</a>
+        <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Atrás</a>
       </div>
     </div>
   </div>

@@ -26,7 +26,7 @@
         <th>Fecha de prestamo</th>
         <th>F. Devolucion propuesta</th>
         <th>F Devolucion real</th>
-        <th width = "350px">Action</th>
+        <th width = "350px">Acción</th>
       </tr>
       
       @foreach ($lendings as $lending)

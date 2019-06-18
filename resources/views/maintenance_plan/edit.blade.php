@@ -4,13 +4,13 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3>Edit Maintenance Plan</h3>
+        <h3>Editar plan de mantenimiento</h3>
       </div>
     </div>
 
     @if ($errors->any())
       <div class="alert alert-danger">
-        <strong>Whoops! </strong> there where some problems with your input.<br>
+        <strong>Whoops! </strong> Hay algun(os) problema(s) con tu(s) entrada(s).<br>
         <ul>
           @foreach ($errors as $error)
             <li>{{$error}}</li>
@@ -24,12 +24,12 @@
       @method('PUT')
       <div class="row">
           <div class="col-md-12">
-              <strong>Maintenance Plan Name:</strong>
+              <strong>Nombre:</strong>
               <input type="text" name="maintenance_plan_name" class="form-control" value="{{$maintenance_plan->maintenance_plan_name}}">
           </div>
 
           <div class="col-md-12">
-            <strong>Priority: </strong>
+            <strong>Prioridad: </strong>
             <select class="form-control" name="id_priority">
               <option selected value="{{$maintenance_plan->priority->id}}">{{$maintenance_plan->priority->priority_name}}</option>
                 @foreach ($priorities as $priority)
@@ -39,7 +39,7 @@
           </div>
           
           <div class="col-md-12">
-            <strong>Frequency: </strong>
+            <strong>Frecuencia: </strong>
             <select class="form-control" name="id_frequency">
               <option selected value="{{$maintenance_plan->frequency->id}}">{{$maintenance_plan->frequency->frequency_name}}</option>
                 @foreach ($frequencies as $frequency)
@@ -49,13 +49,13 @@
           </div>
           
           <div class="col-md-12">
-          <strong>Description :</strong>
+          <strong>Descripción :</strong>
           <textarea class="form-control" name="description" rows="8" cols="80">{{$maintenance_plan->description}}</textarea>
         </div>
 
         <div class="col-md-12">
-          <a href="{{route('maintenance_plan.index')}}" class="btn btn-sm btn-success">Back</a>
-          <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+          <a href="{{route('maintenance_plan.index')}}" class="btn btn-sm btn-success">Atrás</a>
+          <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div> 
       </div>
     </form>

@@ -214,7 +214,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-book"></i> <span>Mantencion</span>
+            <i class="fa fa-book"></i> <span>Mantención</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -224,7 +224,7 @@
             <li><a href="{{route('maintenance_plan.index')}}"><i class="fa fa-circle-o"></i> Plan de Mantencion </a></li>
             <li><a href="{{route('frequency.index')}}"><i class="fa fa-circle-o"></i> Frecuencia </a></li>
           <li><a href="{{route('priority.index')}}"><i class="fa fa-circle-o"></i> Prioridad </a></li>
-          <li><a href="{{route('reason.index')}}"><i class="fa fa-circle-o"></i> Razon </a></li>
+          <li><a href="{{route('reason.index')}}"><i class="fa fa-circle-o"></i> Razón </a></li>
           </ul>
         </li>
 
@@ -236,7 +236,7 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{route('career.index')}}"><i class="fa fa-circle-o"></i>Carera </a></li>
+              <li><a href="{{route('career.index')}}"><i class="fa fa-circle-o"></i>Carrera </a></li>
             <li><a href="{{route('study_plan.index')}}"><i class="fa fa-circle-o"></i> Planes de estudio </a></li>
             </ul>
           </li>

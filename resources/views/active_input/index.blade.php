@@ -5,10 +5,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>Lista activo inzumo</h3>
+        <h3>Listas de activos/insumos</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('active_input.create')}}">Create New active_input</a>
+        <a class="btn btn-sm btn-success" href="{{ route('active_input.create')}}">Agregar nuevo activo/insumo</a>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
         <th>Valor UF</th>
         <th>Modelo</th>
         <th>Marca</th>
-        <th width = "200px">Accion</th>
+        <th width = "200px">Acción</th>
       </tr>
 
       @foreach ($active_inputs as $active_input)

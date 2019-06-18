@@ -28,12 +28,12 @@
           <input type="text" name="career_name" class="form-control" placeholder="nombre carrera" required="required">
         </div>
         <div class="col-md-12">
-          <strong>Descripcion :</strong>
-          <textarea class="form-control" placeholder="ingresar descripcion" name="description" rows="8" cols="80" required="required"></textarea>
+          <strong>Descripción :</strong>
+          <textarea class="form-control" placeholder="ingresar descripcion" name="descripción de carrera" rows="8" cols="80" required="required"></textarea>
         </div>
         
         <div class="col-md-12">
-          <a href="{{route('career.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <a href="{{route('career.index')}}" class="btn btn-sm btn-success">Atrás</a>
           <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>

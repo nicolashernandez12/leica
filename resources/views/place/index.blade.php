@@ -22,8 +22,8 @@
       <tr>
         <th width = "50px"><b>ID.</b></th>
         <th width = "300px">Nombre</th>
-        <th>Descripcion</th>
-        <th width = "200px">Accion</th>
+        <th>Descripción</th>
+        <th width = "200px">Acción</th>
       </tr>
 
       @foreach ($places as $place)
