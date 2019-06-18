@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3>New reason</h3>
+        <h3>Nueva razón</h3>
       </div>
     </div>
 
@@ -23,8 +23,8 @@
       @csrf
       <div class="row">
         <div class="col-md-12">
-          <strong>Name:</strong>
-          <input type="text" name="reason_name" class="form-control" placeholder="reason name">
+          <strong>Nombre:</strong>
+          <input type="text" name="reason_name" class="form-control" placeholder="razón nombre">
         </div>
         <div class="col-md-12">
           <strong>Description :</strong>

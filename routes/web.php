@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
     //Auth::routes(['register' => false]);
+    route::resource('career','CareerController');
     
     route::resource('career','CareerController');
     route::resource('study_plan','StudyPlanController');
