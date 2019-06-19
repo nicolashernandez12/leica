@@ -17,7 +17,7 @@
 
       <div class="col-md-12">
         <div class="form-group">
-            <strong>Numero de serie : </strong> {{$active_input->serial_number}}
+            <strong>Numero de serie : </strong> {{$inventory->serial_number}}
         </div>
     </div>
       <div class="col-md-12">

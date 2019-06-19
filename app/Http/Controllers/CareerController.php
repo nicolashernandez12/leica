@@ -38,7 +38,7 @@ class CareerController extends Controller
     {
         $request->validate([
             'career_name' => 'required',
-            'description' => 'required'
+            'description' => 'required',
           ]);
   
           Career::create($request->all());

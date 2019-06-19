@@ -46,7 +46,6 @@ class ActiveInputController extends Controller
         $request->validate([
             'input_name' => 'required',
             'uf_value' => 'required',
-
             'id_model' => 'required',
             'id_category' => 'required',
             'id_maintenance_plan' => 'required'
@@ -98,7 +97,6 @@ class ActiveInputController extends Controller
             'input_name' => 'required',
             'id_model' => 'required',
             'id_maintenance_plan' => 'required',
-
             'id_category' => 'required',
             'uf_value' => 'required'
           ]);
@@ -108,7 +106,6 @@ class ActiveInputController extends Controller
           $active_input->characteristic = $request->get('characteristic');
           $active_input->observation = $request->get('observation');
           $active_input->description = $request->get('description');
-
           $active_input->id_model = $request->get('id_model');
           $active_input->id_category = $request->get('id_category');
           $active_input->id_maintenance_plan = $request->get('id_maintenance_plan');

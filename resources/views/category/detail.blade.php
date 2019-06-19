@@ -17,11 +17,11 @@
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>Descripcion : </strong> {{$category->description}}
+          <strong>Descripción : </strong> {{$category->description}}
         </div>
       </div>
       <div class="col-md-12">
-        <a href="{{route('category.index')}}" class="btn btn-sm btn-success">Atras</a>
+        <a href="{{route('category.index')}}" class="btn btn-sm btn-success">Atrás</a>
       </div>
     </div>
   </div>

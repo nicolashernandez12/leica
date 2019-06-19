@@ -5,10 +5,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>List Maintenance Plan</h3>
+        <h3>Lista plan de mantenimiento</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('maintenance_plan.create')}}">Create New Maintenance Plan</a>
+        <a class="btn btn-sm btn-success" href="{{ route('maintenance_plan.create')}}">Agregar plan mantenimiento</a>
       </div>
     </div>
 
@@ -20,11 +20,11 @@
 
     <table class="table table-hover table-sm">
       <tr>
-        <th width = "50px"><b>No.</b></th>
-        <th>Name</th>
-        <th>Priority</th>
-        <th>Frequency</th>
-        <th width = "180px">Action</th>
+        <th width = "50px"><b>Id.</b></th>
+        <th>Nombre</th>
+        <th>Prioridad</th>
+        <th>Frecuencia</th>
+        <th width = "200px">Acción</th>
       </tr>
       
       @foreach ($maintenance_plans as $maintenance_plan)
@@ -35,11 +35,11 @@
           <td>{{$maintenance_plan->frequency->frequency_name}}</td>
           <td>
           <form action="{{route('maintenance_plan.destroy', $maintenance_plan->id)}}" method="post">
-            <a class="btn btn-sm btn-success" href="{{route('maintenance_plan.show',$maintenance_plan->id)}}">Show</a>
-              <a class="btn btn-sm btn-warning" href="{{route('maintenance_plan.edit',$maintenance_plan->id)}}">Edit</a>
+            <a class="btn btn-sm btn-success" href="{{route('maintenance_plan.show',$maintenance_plan->id)}}">Mostrar</a>
+              <a class="btn btn-sm btn-warning" href="{{route('maintenance_plan.edit',$maintenance_plan->id)}}">Editar</a>
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
             </form>
           </td>
         </tr>

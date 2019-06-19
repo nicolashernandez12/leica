@@ -22,6 +22,7 @@
       <tr>
         <th width = "50px"><b>No.</b></th>
         <th>Inventory</th>
+        <th>Serial Number</th>
         <th>Lending</th>
         <th width = "180px">Action</th>
       </tr>
@@ -30,6 +31,7 @@
         <tr>
           <td><b>{{$loan_registration->id}}.</b></td>
           <td>{{$loan_registration->inventory->activeInput->input_name}}</td>
+          <td>{{$loan_registration->inventory->serial_number}}</td>
           <td>{{$loan_registration->lending->liable->name_person}}</td>
           <td>
           <form action="{{route('loan_registration.destroy', $loan_registration->id)}}" method="post">

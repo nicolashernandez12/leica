@@ -25,8 +25,8 @@
       <tr>
         <th width = "50px"><b>ID.</b></th>
         <th width = "300px">Nombre</th>
-        <th >Descripcion</th>
-        <th width = "210px">Accion</th>
+        <th >Descripción</th>
+        <th width = "210px">Acción</th>
       </tr>
 
       @foreach ($careers as $career)

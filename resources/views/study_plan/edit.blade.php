@@ -60,19 +60,7 @@
             </div> --}}
 
             <div class="row">
-                <div class="col-md-12">
-                    <strong>Software: </strong>
-                    <select class="form-control" name="softwares[]" multiple>
-                        @foreach ($softwares as $software)
-                            @if(in_array($software->id, $software_ids))
-                                <option selected value="{{$software->id}}">{{$software->name_software}}</option>
-                            @else
-                                <option value="{{$software->id}}">{{$software->name_software}}</option>
-                            @endif
-
-                        @endforeach
-                    </select>
-                </div>
+                
             </div>
 
 

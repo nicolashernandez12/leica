@@ -4,13 +4,13 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3>New position</h3>
+        <h3>Agregar Cargo</h3>
       </div>
     </div>
 
     @if ($errors->any())
       <div class="alert alert-danger">
-        <strong>Whoops! </strong> there where some problems with your input.<br>
+        <strong>Whoops! </strong> Hay algun(os) problema(s) con tu(s) entrada(s).<br>
         <ul>
           @foreach ($errors as $error)
             <li>{{$error}}</li>
@@ -23,17 +23,17 @@
       @csrf
       <div class="row">
         <div class="col-md-12">
-          <strong>Name:</strong>
-          <input type="text" name="position_name" class="form-control" placeholder="position name">
+          <strong>Nombre:</strong>
+          <input type="text" name="position_name" class="form-control" placeholder="Nombre del cargo">
         </div>
         <div class="col-md-12">
-          <strong>Description :</strong>
-          <textarea class="form-control" positionholder="description" name="description" rows="8" cols="80"></textarea>
+          <strong>Descripción :</strong>
+          <textarea class="form-control" placeholder="Descripción de cargo interno" name="description" rows="8" cols="80"></textarea>
         </div>
 
         <div class="col-md-12">
-          <a href="{{route('position.index')}}" class="btn btn-sm btn-success">Back</a>
-          <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+          <a href="{{route('position.index')}}" class="btn btn-sm btn-success">Atrás</a>
+          <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>
     </form>

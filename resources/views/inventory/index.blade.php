@@ -22,6 +22,7 @@
       <tr>
         <th width = "50px"><b>No.</b></th>
         <th>Name Active Input</th>
+        <th>Serial Number</th>
         <th>quantity</th>
         <th>State</th>
         <th width = "180px">Action</th>
@@ -31,6 +32,7 @@
         <tr>
           <td><b>{{$inventory->id}}.</b></td>
           <td>{{$inventory->activeInput->input_name}}</td>
+          <td>{{$inventory->serial_number}}</td>
           <td>{{$inventory->quantity}}</td>
           <td>{{$inventory->state->state_name}}</td>
           <td>

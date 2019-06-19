@@ -103,7 +103,7 @@ class InventoryController extends Controller
           ]);
           $inventory = Inventory::find($id);
           $inventory->quantity = $request->get('quantity');
-          $active_input->serial_number = $request->get('serial_number');
+          $inventory->serial_number = $request->get('serial_number');
           $inventory->observation = $request->get('observation');
           $inventory->id_active_input = $request->get('id_active_input');
           $inventory->id_state = $request->get('id_state');

@@ -29,6 +29,34 @@
           <strong>Fecha de termino : </strong> {{$study_plan->date_end}}
         </div>
       </div>
+
+
+      {{-- <div>
+          <table>
+              <tr>
+                  <th>Software:</th>
+                </tr>
+                @foreach ($study_plan as $software)
+                  <tr>
+                    <td>{{$software->software->name_software}}</td>
+                  </tr>
+                @endforeach
+          </table>
+        </div> --}}
+
+        <div class="col-md-12">
+            <strong>Software: </strong>
+            <select class="form-control" name="softwares[]" multiple readonly="readonly">
+                @foreach ($softwares as $software)
+                    @if(in_array($software->id, $software_ids))
+                        <option  value="{{$software->id}}">{{$software->name_software}}</option>
+                    @endif
+
+                @endforeach
+            </select>
+        </div>
+
+
       <div class="col-md-12">
         <a href="{{route('study_plan.index')}}" class="btn btn-sm btn-success">Atras</a>
       </div>

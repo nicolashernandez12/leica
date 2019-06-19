@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3>Editar activo inzumo</h3>
+        <h3>Editar articulo</h3>
       </div>
     </div>
 
@@ -35,17 +35,18 @@
 
         <div class="col-md-12">
           <strong>Caracteristicas :</strong>
-          <textarea class="form-control" value="{{$active_input->characteristic}}" name="characteristic" rows="4" cols="80"></textarea>
+          <textarea class="form-control" name="characteristic" rows="4" cols="80">{{$active_input->characteristic}}</textarea>
         </div>
+        
 
         <div class="col-md-12">
             <strong>Observacion :</strong>
-            <textarea class="form-control" value="{{$active_input->observation}}" name="observation" rows="4" cols="80"></textarea>
+            <textarea class="form-control"  name="observation" rows="4" cols="80">{{$active_input->observation}}</textarea>
         </div>
 
         <div class="col-md-12">
             <strong>Descripcion :</strong>
-            <textarea class="form-control" value="{{$active_input->description}}" name="description" rows="4" cols="80"></textarea>
+            <textarea class="form-control"  name="description" rows="4" cols="80">{{$active_input->description}}</textarea>
         </div>
 
 
@@ -72,7 +73,7 @@
 
         <div class="col-md-12">
           <strong>Categoria: </strong>
-          <select class="form-control" name="id_categoria">
+          <select class="form-control" name="id_category">
             <option selected value="{{$active_input->category->id}}">{{$active_input->category->category_name}}</option>
               @foreach ($categories as $category)
             <option value="{{$category->id}}">{{$category->category_name}}</option>

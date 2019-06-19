@@ -105,7 +105,14 @@ class StudyPlanController extends Controller
     {
         $study_plan = StudyPlan::with('equipment', 'softwarePlanStudy')->where('id', $id)->get();
         $study_plan = $study_plan->first();
-        return view('study_plan.detail', compact('study_plan'));
+        $softwares = Software::all();
+
+        $software_ids = [];
+        foreach ($study_plan->softwarePlanStudy as $software) {
+            array_push($software_ids, $software->id_software);
+        }
+        
+        return view('study_plan.detail', compact('study_plan','softwares','software_ids'));
     }
 
     /**

@@ -8,7 +8,7 @@
         <h3>Lista activo inzumo</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('active_input.create')}}">Create New active_input</a>
+        <a class="btn btn-sm btn-success" href="{{ route('active_input.create')}}">Agregar nuevo articulo</a>
       </div>
     </div>
 

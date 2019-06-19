@@ -46,7 +46,7 @@ class MaintenancePlanController extends Controller
             'maintenance_plan_name' => 'required',
             'description' => 'required',
             'id_priority' => 'required',
-            'id_frequency' => 'required'
+            'id_frequency' => 'required',
           ]);
   
           MaintenancePlan::create($request->all());
@@ -94,7 +94,6 @@ class MaintenancePlanController extends Controller
     {
         $request->validate([
             'maintenance_plan_name' => 'required',
-            'id_reason' => 'required',
             'id_frequency' => 'required',
             'id_priority' => 'required',
             'description' => 'required'
