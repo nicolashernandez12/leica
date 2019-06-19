@@ -168,18 +168,18 @@ class StudyPlanController extends Controller
             
         }
 
-        if ($request->has('actives')) {
-            $actives = $request->get('actives');
-            foreach ($study_plan->equipment as $active) {
-                $active->delete();
-            }
-            foreach ($actives as $active) {
-                $new_assign_active = new EquipmentPlanStudy();
-                $new_assign_active->id_active_input = $active;
-                $new_assign_active->id_study_plan = $id;
-                $new_assign_active->save();
-            }
-        }
+        // if ($request->has('actives')) {
+        //     $actives = $request->get('actives');
+        //     foreach ($study_plan->equipment as $active) {
+        //         $active->delete();
+        //     }
+        //     foreach ($actives as $active) {
+        //         $new_assign_active = new EquipmentPlanStudy();
+        //         $new_assign_active->id_active_input = $active;
+        //         $new_assign_active->id_study_plan = $id;
+        //         $new_assign_active->save();
+        //     }
+        // }
         
         return redirect()->route('study_plan.index')
             ->with('success', 'plan de estudio actualizado exitosamente');

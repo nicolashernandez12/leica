@@ -17,7 +17,7 @@ class CreatePlaceSoftwareTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_software');
             $table->foreign('id_software')->references('id')->on('software')->onDelete('cascade');
-            $table->unsignedBigInteger('id_place')->unique();
+            $table->unsignedBigInteger('id_place');
             $table->foreign('id_place')->references('id')->on('places')->onDelete('cascade');
             $table->timestamps();
         });

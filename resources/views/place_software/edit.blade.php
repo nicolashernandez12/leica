@@ -19,22 +19,29 @@
       </div>
     @endif
 
-    <form action="{{route('place_software.update',$place_software->id)}}" method="post">
+    <form action="{{route('place_software.update',$place->id)}}" method="post">
       @csrf
       @method('PUT')
       <div class="row">
 
           <div class="col-md-12">
-              <strong>Lugar: </strong>
-              <select class="form-control" name="id_place">
-                <option selected value="{{$place_software->place->id}}">{{$place_software->place->place_name}}</option>
-                  @foreach ($places as $place)
-                <option value="{{$place->id}}">{{$place->place_name}}</option>
-                  @endforeach
-              </select>
-          </div>
+              {{-- <strong>Usuario:</strong> --}}
+              <input type="hidden" name="id_place" class="form-control" value="{{$place->id}}">
+            </div>
 
-          <div class="col-md-12">
+            <div class="col-md-12">
+                <strong>Software: </strong>
+                <select class="form-control" name="softwares[]" multiple>
+                    @foreach ($softwares as $software)
+                        @if(in_array($software->id, $software_ids))
+                            <option selected value="{{$software->id}}">{{$software->name_software}}</option>
+                        @else
+                            <option value="{{$software->id}}">{{$software->name_software}}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+          {{-- <div class="col-md-12">
             <strong>Software: </strong>
             <select class="form-control" name="id_software">
               <option selected value="{{$place_software->software->id}}">{{$place_software->software->name_software}}</option>
@@ -42,7 +49,7 @@
               <option value="{{$software->id}}">{{$software->name_software}}</option>
                 @endforeach
             </select>
-          </div>
+          </div> --}}
 
         <div class="col-md-12">
           <a href="{{route('place_software.index')}}" class="btn btn-sm btn-success">Atras</a>

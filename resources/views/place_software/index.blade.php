@@ -7,9 +7,9 @@
       <div class="col-md-10">
         <h3>Lista de lugar software</h3>
       </div>
-      <div class="col-sm-2">
+      {{-- <div class="col-sm-2">
         <a class="btn btn-sm btn-success" href="{{ route('place_software.create')}}">Agregar lugar software</a>
-      </div>
+      </div> --}}
     </div>
 
     @if ($message = Session::get('success'))
@@ -35,7 +35,7 @@
               <a class="btn btn-sm btn-warning" href="{{route('place_software.edit',$place_software->id)}}">Editar</a>
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+              {{-- <button type="submit" class="btn btn-sm btn-danger">Eliminar</button> --}}
             </form>
           </td>
         </tr>

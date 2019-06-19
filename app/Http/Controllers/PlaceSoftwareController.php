@@ -18,6 +18,8 @@ class PlaceSoftwareController extends Controller
     {
         $place_softwares = Place::all();
         //$place_softwares = PlaceSoftware::with('place')->distinct('place_name')->get();
+
+        //$place_softwares = PlaceSoftware::with('place')->distinct('place_name')->get();
         return view('place_software.index',compact('place_softwares'));
         // return view('place_software.index')->with('place_softwares',PlaceSoftware::with('place')->get());
     }
@@ -29,6 +31,7 @@ class PlaceSoftwareController extends Controller
      */
     public function create()
     {
+
         $places = Place::all();
         $softwares = Software::all();
         return view('place_software.create', compact('places','softwares'));
@@ -80,7 +83,6 @@ class PlaceSoftwareController extends Controller
      */
     public function show($id)
     {
-
         $place = Place::find($id);
         // $id=$place->place->id;
         $place_softwares = PlaceSoftware::where('id_place',$id)->distinct('id_sofware')->get();
@@ -99,11 +101,18 @@ class PlaceSoftwareController extends Controller
      */
     public function edit($id)
     {
-        $place_software = PlaceSoftware::find($id);
-        $places = Place::all();
+        $place = Place::find($id);
+
         $softwares = Software::all();
-        return view('place_software.edit')->with('place_software',$place_software)->with('places',$places)
-                                                                                  ->with('softwares',$softwares);
+
+        $software_ids = [];
+
+        foreach ($place->placeSoftware as $software) {
+            array_push($software_ids, $software->id_software);
+        }
+
+        return view('place_software.edit',compact('place','softwares', 'software_ids'));
+        
     }
 
     /**
@@ -115,16 +124,25 @@ class PlaceSoftwareController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'id_place' => 'required',
-            'id_software' => 'required',
-          ]);
-          $place_software = PlaceSoftware::find($id);
-          $place_software->id_place = $request->get('id_place');
-          $place_software->id_software = $request->get('id_software');
-          $place_software->save();
-          return redirect()->route('place_software.index')
-                          ->with('success', 'software lugar actualizado exitosamente');
+        $place = Place::find($id);
+
+        if ($request->has('softwares')) {
+            $softwares = $request->get('softwares');
+            foreach ($place->placeSoftware as $software) {
+                $software->delete();
+            }
+            foreach($softwares as $software){
+                $new_assign_software = new PlaceSoftware();
+                $new_assign_software->id_software = $software;
+                $new_assign_software->id_place = $id;
+                $new_assign_software->save();
+            }
+            
+        }
+
+        return redirect()->route('place_software.index')
+                ->with('success', 'software por lugar actualizado exitosamente');
+        
     }
 
     /**
