@@ -29,8 +29,8 @@
         </div>
 
         <div class="col-md-12">
-          <strong>Version:</strong>
-          <input type="text" name="version" class="form-control" placeholder="version" required="required">
+          <strong>Versión:</strong>
+          <input type="text" name="version" class="form-control" placeholder="versión del software" required="required">
         </div>
 
         <div class="col-md-12">
@@ -43,17 +43,17 @@
         </div>
 
         <div class="col-md-12">
-          <strong>Descripcion :</strong>
-          <textarea class="form-control" placeholder="description" name="description" rows="8" cols="80"></textarea>
+          <strong>Descripción :</strong>
+          <textarea class="form-control" placeholder="descripción del software" name="description" rows="8" cols="80"></textarea>
         </div>
 
         <div class="col-md-12">
-          <strong>Observacion :</strong>
-          <textarea class="form-control" placeholder="Observation" name="observation" rows="8" cols="80"></textarea>
+          <strong>Observación :</strong>
+          <textarea class="form-control" placeholder="Observación del software" name="observation" rows="8" cols="80"></textarea>
         </div>
 
         <div class="col-md-12">
-          <a href="{{route('software.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <a href="{{route('software.index')}}" class="btn btn-sm btn-success">Atrás</a>
           <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>

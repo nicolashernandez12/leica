@@ -29,7 +29,11 @@
         </div>
         <div class="col-md-12">
           <strong>Descripción :</strong>
+<<<<<<< HEAD
           <textarea class="form-control" placeholder="ingresar descripcion" name="description" rows="8" cols="80" required="required"></textarea>
+=======
+          <textarea class="form-control" placeholder="ingresar descripcion" name="descripción de carrera" rows="8" cols="80" required="required"></textarea>
+>>>>>>> dba0700bca3ff6d2d1dfdb43ce649c2ce065514d
         </div>
         
         <div class="col-md-12">

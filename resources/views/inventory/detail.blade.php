@@ -4,14 +4,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3>Detail</h3>
+        <h3>Detalle</h3>
         <hr>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="form-group">
-          <strong>Name Active Input : </strong> {{$inventory->activeInput->input_name}}
+          <strong>Nombre: </strong> {{$inventory->activeInput->input_name}}
         </div>
       </div>
 
@@ -22,21 +22,21 @@
     </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>quantity : </strong> {{$inventory->quantity}}
+          <strong>Cantidad: </strong> {{$inventory->quantity}}
         </div>
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>State : </strong> {{$inventory->state->state_name}}
+          <strong>Estado: </strong> {{$inventory->state->state_name}}
         </div>
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>Observation : </strong> {{$inventory->observation}}
+          <strong>Observación : </strong> {{$inventory->observation}}
         </div>
       </div>
       <div class="col-md-12">
-        <a href="{{route('inventory.index')}}" class="btn btn-sm btn-success">Back</a>
+        <a href="{{route('inventory.index')}}" class="btn btn-sm btn-success">Atrás</a>
       </div>
     </div>
   </div>

@@ -29,7 +29,7 @@
           </div>
 
           <div class="col-md-12">
-            <strong>Version:</strong>
+            <strong>Versión:</strong>
             <input type="text" name="version" class="form-control" value="{{$software->version}}">
         </div>
 
@@ -44,12 +44,12 @@
           </div>
           
           <div class="col-md-12">
-          <strong>Descripcion :</strong>
+          <strong>Descripción :</strong>
           <textarea class="form-control" name="description" rows="4" cols="80">{{$software->description}}</textarea>
         </div>
 
         <div class="col-md-12">
-          <strong>Observacion :</strong>
+          <strong>Observación :</strong>
           <textarea class="form-control" name="observation" rows="4" cols="80">{{$software->observation}}</textarea>
         </div>
 

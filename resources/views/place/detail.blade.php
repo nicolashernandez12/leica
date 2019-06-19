@@ -50,12 +50,17 @@
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>Descripcion : </strong> {{$place->description}}
+          <strong>Descripción : </strong> {{$place->description}}
         </div>
       </div>--}}
       <div class="col-md-12">
+<<<<<<< HEAD
         <a href="{{route('place.index')}}" class="btn btn-sm btn-success">Atras</a>
       </div> 
+=======
+        <a href="{{route('place.index')}}" class="btn btn-sm btn-success">Atrás</a>
+      </div>
+>>>>>>> dba0700bca3ff6d2d1dfdb43ce649c2ce065514d
     </div>
   </div>
 @endsection

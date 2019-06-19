@@ -5,13 +5,13 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h3>New Inventory</h3>
+        <h3>Agregar Inventario</h3>
       </div>
     </div>
 
     @if ($errors->any())
       <div class="alert alert-danger">
-        <strong>Whoops! </strong> there where some problems with your input.<br>
+        <strong>Whoops! </strong> Hay algun(os) problema(s) con tu(s) entrada(s).<br>
         <ul>
           @foreach ($errors as $error)
             <li>{{$error}}</li>
@@ -25,7 +25,7 @@
       <div class="row">
 
         <div class="col-md-10">
-          <strong>Active Input Name: </strong>
+          <strong>Nombre de activo: </strong>
           <select class="form-control" name="id_active_input">
             @foreach ($active_inputs as $active_input)
             <option value="{{$active_input->id}}">{{$active_input->input_name}}</option>
@@ -38,6 +38,7 @@
         </div>
 
         <div class="col-md-12">
+<<<<<<< HEAD
           <strong>Numero de serie:</strong>
           <input type="text" name="serial_number" class="form-control" placeholder="serial number" required="required">
       </div>
@@ -46,16 +47,19 @@
 
         <div class="col-md-12">
           <strong>Quantity:</strong>
+=======
+          <strong>Cantidad:</strong>
+>>>>>>> dba0700bca3ff6d2d1dfdb43ce649c2ce065514d
           <input type="number" name="quantity" class="form-control">
         </div>
 
         <div class="col-md-12">
-          <strong>Observation :</strong>
-          <textarea class="form-control" placeholder="observation" name="observation" rows="4" cols="80"></textarea>
+          <strong>Observación :</strong>
+          <textarea class="form-control" placeholder="observaciones de inventario" name="observation" rows="4" cols="80"></textarea>
         </div>
 
         <div class="col-md-10">
-          <strong>State: </strong>
+          <strong>Estado: </strong>
           <select class="form-control" name="id_state">
             @foreach ($states as $state)
             <option value="{{$state->id}}">{{$state->state_name}}</option>
@@ -83,8 +87,8 @@
         </div>
 
         <div class="col-md-12">
-          <a href="{{route('inventory.index')}}" class="btn btn-sm btn-success">Back</a>
-          <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+          <a href="{{route('inventory.index')}}" class="btn btn-sm btn-success">Atrás</a>
+          <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>
     </form>

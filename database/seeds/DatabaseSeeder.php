@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
+<<<<<<< HEAD
             'email' => 'admin@mail.com',
             'password' => Hash::make('secret123'),
         ]);
@@ -108,6 +109,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+=======
+            
+            'email' => 'admin@mail.com',
+            'password' => Hash::make('12345678'),
+        ]);
+>>>>>>> dba0700bca3ff6d2d1dfdb43ce649c2ce065514d
         
         // $this->call(UsersTableSeeder::class);
     }

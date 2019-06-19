@@ -11,7 +11,7 @@
 
     @if ($errors->any())
       <div class="alert alert-danger">
-        <strong>Whoops! </strong> there where some problems with your input.<br>
+        <strong>Whoops! </strong> Hay algun(os) problema(s) con tu(s) entrada(s).<br>
         <ul>
           @foreach ($errors as $error)
             <li>{{$error}}</li>
@@ -62,7 +62,7 @@
           
 
         <div class="col-md-12">
-          <a href="{{route('lending.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <a href="{{route('lending.index')}}" class="btn btn-sm btn-success">Atrás</a>
           <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div> 
       </div>

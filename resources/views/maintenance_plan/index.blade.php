@@ -24,7 +24,11 @@
         <th>Nombre</th>
         <th>Prioridad</th>
         <th>Frecuencia</th>
+<<<<<<< HEAD
         <th width = "200px">Acción</th>
+=======
+        <th width = "180px">Acción</th>
+>>>>>>> dba0700bca3ff6d2d1dfdb43ce649c2ce065514d
       </tr>
       
       @foreach ($maintenance_plans as $maintenance_plan)

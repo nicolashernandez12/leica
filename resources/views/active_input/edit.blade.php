@@ -4,7 +4,11 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
+<<<<<<< HEAD
         <h3>Editar articulo</h3>
+=======
+        <h3>Editar activo insumo</h3>
+>>>>>>> dba0700bca3ff6d2d1dfdb43ce649c2ce065514d
       </div>
     </div>
 
@@ -40,6 +44,7 @@
         
 
         <div class="col-md-12">
+<<<<<<< HEAD
             <strong>Observacion :</strong>
             <textarea class="form-control"  name="observation" rows="4" cols="80">{{$active_input->observation}}</textarea>
         </div>
@@ -47,6 +52,15 @@
         <div class="col-md-12">
             <strong>Descripcion :</strong>
             <textarea class="form-control"  name="description" rows="4" cols="80">{{$active_input->description}}</textarea>
+=======
+            <strong>Observación :</strong>
+            <textarea class="form-control" value="{{$active_input->observation}}" name="observation" rows="4" cols="80"></textarea>
+        </div>
+
+        <div class="col-md-12">
+            <strong>Descripción :</strong>
+            <textarea class="form-control" value="{{$active_input->description}}" name="description" rows="4" cols="80"></textarea>
+>>>>>>> dba0700bca3ff6d2d1dfdb43ce649c2ce065514d
         </div>
 
 
@@ -82,7 +96,7 @@
       </div>
 
         <div class="col-md-12">
-          <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <a href="{{route('active_input.index')}}" class="btn btn-sm btn-success">Atrás</a>
           <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>

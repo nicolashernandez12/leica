@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h3>Lista de Software</h3>
+        <h3>Listas de Softwares</h3>
       </div>
       <div class="col-sm-2">
         <a class="btn btn-sm btn-success" href="{{ route('software.create')}}">Agregar Software</a>
@@ -23,8 +23,8 @@
         <th width = "50px"><b>ID.</b></th>
         <th>Nombre</th>
         <th>Tipo</th>
-        <th>Version</th>
-        <th width = "200px">Accion</th>
+        <th>Versión</th>
+        <th width = "200px">Acción</th>
       </tr>
       
       @foreach ($softwares as $software)

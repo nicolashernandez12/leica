@@ -27,12 +27,12 @@
           <input type="text" name="place_name" class="form-control" placeholder="Nombre" required="required">
         </div>
         <div class="col-md-12">
-          <strong>Descripcion :</strong>
-          <textarea class="form-control" placeholder="Descripcion" name="description" rows="8" cols="80" required="required"></textarea>
+          <strong>Descripción :</strong>
+          <textarea class="form-control" placeholder="Descripcion" name="descripción del lugar" rows="8" cols="80" required="required"></textarea>
         </div>
 
         <div class="col-md-12">
-          <a href="{{route('place.index')}}" class="btn btn-sm btn-success">Atras</a>
+          <a href="{{route('place.index')}}" class="btn btn-sm btn-success">Atrás</a>
           <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
         </div>
       </div>

@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="col-md-12">
-        <a href="{{route('lending.index')}}" class="btn btn-sm btn-success">Atras</a>
+        <a href="{{route('lending.index')}}" class="btn btn-sm btn-success">Atrás</a>
       </div>
     </div>
   </div>

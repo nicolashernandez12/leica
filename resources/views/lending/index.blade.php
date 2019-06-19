@@ -26,7 +26,11 @@
         <th>Fecha de prestamo</th>
         <th>F. Devolucion propuesta</th>
         <th>F Devolucion real</th>
+<<<<<<< HEAD
         <th width = "200px">Action</th>
+=======
+        <th width = "350px">Acción</th>
+>>>>>>> dba0700bca3ff6d2d1dfdb43ce649c2ce065514d
       </tr>
       
       @foreach ($lendings as $lending)

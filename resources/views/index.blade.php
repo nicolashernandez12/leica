@@ -72,13 +72,12 @@
             <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
             <ul class="todo-list">
               <li>
-                <!-- drag handle -->
                 <span class="handle">
                       <i class="fa fa-ellipsis-v"></i>
                       <i class="fa fa-ellipsis-v"></i>
                     </span>
                 <!-- checkbox -->
-                <input type="checkbox" value="">
+                <input type="checkbox" value="" >
                 <!-- todo text -->
                 <span class="text">Integrar mantenedores a la vista</span>
                 <!-- Emphasis label -->

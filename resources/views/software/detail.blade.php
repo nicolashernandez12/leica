@@ -16,7 +16,7 @@
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>Version : </strong> {{$software->version}}
+          <strong>Versión : </strong> {{$software->version}}
         </div>
       </div>
       <div class="col-md-12">
@@ -26,12 +26,12 @@
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>Descripcion : </strong> {{$software->description}}
+          <strong>Descripción : </strong> {{$software->description}}
         </div>
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <strong>Observacion : </strong> {{$software->Observation}}
+          <strong>Observación : </strong> {{$software->Observation}}
         </div>
       </div>
       <div class="col-md-12">

@@ -8,7 +8,7 @@
         <h3>Lista de planes de estudio</h3>
       </div>
       <div class="col-sm-2">
-        <a class="btn btn-sm btn-success" href="{{ route('study_plan.create')}}">Agregar nuevo plan de estudio</a>
+        <a class="btn btn-sm btn-success" href="{{ route('study_plan.create')}}">Agregar plan de estudio</a>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
         <th>Carrera</th>
         <th>Fecha de incio</th>
         <th>Fecha de termino</th>
-        <th width = "200px">Action</th>
+        <th width = "200px">Acción</th>
       </tr>
       
       @foreach ($study_plans as $study_plan)

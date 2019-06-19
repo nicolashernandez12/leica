@@ -93,13 +93,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              {{-- <img src="#" class="user-image" alt="User Image"> --}}
+             <img src="img/inacapp.jpg" class="user-image" alt="User Image"> 
               <span class="hidden-xs">{{ Auth::user()->email }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                {{-- <img src="#" class="img-circle" alt="User Image"> --}}
+                 <img src="img/inacapp.jpg" class="img-circle" alt="User Image">
 
                 <p>
                     {{ Auth::user()->email }}
@@ -143,7 +143,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/nicolas.jpg" class="img-circle" alt="User Image">
+          <img src="img/inacapp.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->email }}</p>
@@ -163,9 +163,14 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
+<<<<<<< HEAD
           <a href=" {{ route('index') }} ">
         <li class="header">Menu Principal</li>
           </a>
+=======
+        <a href="{{route('index')}}" class="header">Menu Principal</a>
+        
+>>>>>>> dba0700bca3ff6d2d1dfdb43ce649c2ce065514d
         <li class="active treeview">
             <i class="fa fa-laptop"></i>
             <a href=" {{ route('index') }} ">
@@ -217,7 +222,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-book"></i> <span>Mantencion</span>
+            <i class="fa fa-book"></i> <span>Mantención</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -228,7 +233,7 @@
             <li><a href="{{route('maintenance.index')}}"><i class="fa fa-circle-o"></i> Mantencion </a></li>
             <li><a href="{{route('frequency.index')}}"><i class="fa fa-circle-o"></i> Frecuencia </a></li>
           <li><a href="{{route('priority.index')}}"><i class="fa fa-circle-o"></i> Prioridad </a></li>
-          <li><a href="{{route('reason.index')}}"><i class="fa fa-circle-o"></i> Razon </a></li>
+          <li><a href="{{route('reason.index')}}"><i class="fa fa-circle-o"></i> Razón </a></li>
           </ul>
         </li>
 
@@ -240,7 +245,7 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{route('career.index')}}"><i class="fa fa-circle-o"></i>Carera </a></li>
+              <li><a href="{{route('career.index')}}"><i class="fa fa-circle-o"></i>Carrera </a></li>
             <li><a href="{{route('study_plan.index')}}"><i class="fa fa-circle-o"></i> Planes de estudio </a></li>
             </ul>
           </li>
