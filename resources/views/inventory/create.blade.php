@@ -32,11 +32,17 @@
             @endforeach
           </select>
         </div>
-
         <div class="col-md-2">
           <br>
             <a href="{{route('active_input.create')}}" class="btn btn-sm btn-success form-control">Agregar activo</a>
         </div>
+
+        <div class="col-md-12">
+          <strong>Numero de serie:</strong>
+          <input type="text" name="serial_number" class="form-control" placeholder="serial number" required="required">
+      </div>
+
+ 
 
         <div class="col-md-12">
           <strong>Quantity:</strong>

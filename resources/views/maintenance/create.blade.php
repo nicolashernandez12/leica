@@ -30,19 +30,15 @@
         </div>
 
         <div class="col-md-12">
-          <strong>User: </strong>
-          <select class="form-control" name="id_user">
-            @foreach ($users as $user)
-              <option value="{{$user->id}}">{{$user->liable->name_person}} {{$user->liable->last_name_person}}</option>
-            @endforeach
-          </select>
+          {{-- <strong>Usuario:</strong> --}}
+          <input type="hidden" name="id_user" class="form-control" value="{{ Auth::user()->id }}">
         </div>
 
         <div class="col-md-12">
           <strong>Inventory: </strong>
           <select class="form-control" name="id_inventory">
             @foreach ($inventories as $inventory)
-              <option value="{{$inventory->id}}">{{$inventory->activeInput->input_name}}</option>
+              <option value="{{$inventory->id}}">{{$inventory->activeInput->input_name}} Serial Number: {{$inventory->serial_number}}</option>
             @endforeach
           </select>
         </div>

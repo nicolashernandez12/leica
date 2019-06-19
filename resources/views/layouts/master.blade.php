@@ -176,17 +176,15 @@
      
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Activos</span>
+            <i class="fa fa-edit"></i> <span>Software</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{route('software.index')}}"><i class="fa fa-circle-o"></i> Softwares</a></li>
+            <li><a href="{{route('place_software.index')}}"><i class="fa fa-circle-o"></i> Software por lugar</a></li>
             <li><a href="{{route('software_type.index')}}"><i class="fa fa-circle-o"></i> Tipo de software</a></li>
-            <li><a href="{{route('active_input.index')}}"><i class="fa fa-circle-o"></i> Equipo</a></li>
-            <li><a href="{{route('inventory.index')}}"><i class="fa fa-circle-o"></i> Inventario</a></li>
-            <li><a href="{{route('category.index')}}"><i class="fa fa-circle-o"></i> Categoria</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -197,20 +195,24 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('lending.create')}}"><i class="fa fa-circle-o"></i> Registrar Prestamo </a></li>
-            <li><a href="{{route('lending.index')}}"><i class="fa fa-circle-o"></i> Revisar Prestamos </a></li>
+            <li><a href="{{route('lending.index')}}"><i class="fa fa-circle-o"></i>Prestamos </a></li>
+            <li><a href="{{route('loan_registration.index')}}"><i class="fa fa-circle-o"></i>Registro de Prestamos </a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-book"></i> <span>Documentos</span>
+            <i class="fa fa-book"></i> <span>Inventario</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('place.index')}}"><i class="fa fa-circle-o"></i>Lugar</a></li>
-          <li><a href="{{route('state.index')}}"><i class="fa fa-circle-o"></i> Estado </a></li>
+            <li><a href="{{route('place.index')}}"><i class="fa fa-circle-o"></i>Inventario por lugar</a></li>
+            <li><a href="{{route('active_input.index')}}"><i class="fa fa-circle-o"></i> Articulos</a></li>
+            <li><a href="{{route('inventory.index')}}"><i class="fa fa-circle-o"></i> Inventario</a></li>
+            <li><a href="{{route('state.index')}}"><i class="fa fa-circle-o"></i> Estado </a></li>
+            <li><a href="{{route('category.index')}}"><i class="fa fa-circle-o"></i> Categoria</a></li>
+          
           </ul>
         </li>
         <li class="treeview">
@@ -221,8 +223,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-              <li><a href="{{route('maintenance.index')}}"><i class="fa fa-circle-o"></i> Registro de mantenciones</a></li>
+              {{-- <li><a href="{{route('maintenance.index')}}"><i class="fa fa-circle-o"></i> Registro de mantenciones</a></li> --}}
             <li><a href="{{route('maintenance_plan.index')}}"><i class="fa fa-circle-o"></i> Plan de Mantencion </a></li>
+            <li><a href="{{route('maintenance.index')}}"><i class="fa fa-circle-o"></i> Mantencion </a></li>
             <li><a href="{{route('frequency.index')}}"><i class="fa fa-circle-o"></i> Frecuencia </a></li>
           <li><a href="{{route('priority.index')}}"><i class="fa fa-circle-o"></i> Prioridad </a></li>
           <li><a href="{{route('reason.index')}}"><i class="fa fa-circle-o"></i> Razon </a></li>
@@ -255,7 +258,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-book"></i> <span>Listas</span>
             <span class="pull-right-container">
@@ -263,10 +266,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            {{-- <li><a href="{{route('lists.inventory_place')}}"><i class="fa fa-circle-o"></i>Lista activo por lugar </a></li> --}}
-          <li><a href="{{route('position.index')}}"><i class="fa fa-circle-o"></i> Cargo </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>Lista activo por lugar </a></li>
+          {{-- <li><a href="{{route('position.index')}}"><i class="fa fa-circle-o"></i> Cargo </a></li> --}}
           </ul>
-        </li>
+        </li> --}}
        
      
        

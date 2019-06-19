@@ -74,28 +74,28 @@ class StudyPlanController extends Controller
 
         }
 
-        if ($request->has('actives')) {
-            $actives = $request->get('actives');
-            foreach ($actives as $active) {
-                $new_assign_active = new EquipmentPlanStudy();
-                $new_assign_active->id_active_input = $active;
-                $new_assign_active->id_study_plan = $study_plan_id;
-                $new_assign_active->save();
-            }
-        }
+        // if ($request->has('actives')) {
+        //     $actives = $request->get('actives');
+        //     foreach ($actives as $active) {
+        //         $new_assign_active = new EquipmentPlanStudy();
+        //         $new_assign_active->id_active_input = $active;
+        //         $new_assign_active->id_study_plan = $study_plan_id;
+        //         $new_assign_active->save();
+        //     }
+        // }
         
         return redirect()->route('study_plan.index')
             ->with('success', 'plan de estudio agregado exitosamente');
     }
 
-    public function createEquipment($actives, $id){
-        foreach ($actives as $active) {
-            $new_assign_active = new EquipmentPlanStudy();
-            $new_assign_active->id_active_input = $active;
-            $new_assign_active->id_study_plan = $study_plan_id;
-            $new_assign_active->save();
-        } 
-    }
+    // public function createEquipment($actives, $id){
+    //     foreach ($actives as $active) {
+    //         $new_assign_active = new EquipmentPlanStudy();
+    //         $new_assign_active->id_active_input = $active;
+    //         $new_assign_active->id_study_plan = $study_plan_id;
+    //         $new_assign_active->save();
+    //     } 
+    // }
 
     /**
      * @param $id

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Place;
+use App\Inventory;
 use Illuminate\Http\Request;
 
 class PlaceController extends Controller
@@ -56,7 +57,10 @@ class PlaceController extends Controller
     public function show($id)
     {
         $place = Place::find($id);
-        return view('place.detail', compact('place'));
+        $id=$place->id;
+        $inventories = Inventory::where('id_place',$id)->get();
+
+        return view('place.detail', compact('place','inventories'));
     }
 
     /**

@@ -20,7 +20,6 @@ class CreateActiveInputsTable extends Migration
             $table->string('characteristic')->nullable();
             $table->string('observation')->nullable();
             $table->string('description')->nullable();
-            $table->string('serial_number');
             $table->unsignedBigInteger('id_category');
             $table->foreign('id_category')->references('id')->on('categories')->onDelete('cascade');
             $table->unsignedBigInteger('id_model');

@@ -22,15 +22,13 @@
       <tr>
         <th width = "50px"><b>ID.</b></th>
         <th>Lugar</th>
-        <th>Software</th>
         <th width = "200px">Accion</th>
       </tr>
       
       @foreach ($place_softwares as $place_software)
         <tr>
           <td><b>{{$place_software->id}}.</b></td>
-          <td>{{$place_software->place->place_name}}</td>
-          <td>{{$place_software->software->name_software}}</td>
+          <td>{{$place_software->place_name}}</td>
           <td>
           <form action="{{route('place_software.destroy', $place_software->id)}}" method="post">
             <a class="btn btn-sm btn-success" href="{{route('place_software.show',$place_software->id)}}">Mostrar</a>

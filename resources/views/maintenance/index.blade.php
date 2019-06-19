@@ -21,7 +21,7 @@
     <table class="table table-hover table-sm">
       <tr>
         <th width = "50px"><b>No.</b></th>
-        <th>User Name</th>
+        <th>Registrado por</th>
         <th>Inventory</th>
         <th>Date Maintenance</th>
         <th width = "180px">Action</th>
@@ -30,8 +30,8 @@
       @foreach ($maintenances as $maintenance)
         <tr>
           <td><b>{{$maintenance->id}}.</b></td>
-          <td>{{$maintenance->userData->liable->name_person}} {{$maintenance->userData->liable->last_name_person}}</td>
-          <td>{{$maintenance->inventory->activeInput->input_name}}</td>
+          <td>{{$maintenance->userData->email}}</td>
+          <td>{{$maintenance->inventory->activeInput->input_name}} S/N: {{$maintenance->inventory->serial_number}}</td>
           <td>{{$maintenance->date_maintenance}}</td>
           <td>
           <form action="{{route('maintenance.destroy', $maintenance->id)}}" method="post">

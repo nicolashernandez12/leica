@@ -14,7 +14,7 @@
   <section class="content">
     <!-- Small boxes (Stat box) -->
     <div class="row">
-      <div class="col-lg-3 col-xs-6">
+      {{-- <div class="col-lg-3 col-xs-6">
         <!-- small box -->
         <div class="small-box bg-aqua">
           <div class="inner">
@@ -27,7 +27,7 @@
           </div>
           <a href="#" class="small-box-footer">Información <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-      </div>
+      </div> --}}
  
       <!-- ./col -->
       <div class="col-lg-3 col-xs-6">
@@ -51,7 +51,7 @@
     <!-- Main row -->
     <div class="row">
       <!-- Left col -->
-      <section class="col-lg-7 connectedSortable">
+      {{-- <section class="col-lg-7 connectedSortable">
      
 
         <!-- /.box (chat box) -->
@@ -139,7 +139,7 @@
         </div>
      
 
-      </section>
+      </section> --}}
 
 
 

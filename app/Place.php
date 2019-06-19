@@ -11,6 +11,6 @@ class Place extends Model
 
     public function inventory()
     {
-        return $this->hasMany('App\Inventario', 'id_place','id');
+        return $this->hasMany('App\Inventory', 'id_place','id');
     }
 }

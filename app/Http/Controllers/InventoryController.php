@@ -46,6 +46,7 @@ class InventoryController extends Controller
     {
         $request->validate([
             'quantity' => 'required',
+            'serial_number' => 'required',
             'id_active_input' => 'required',
             'id_state' => 'required',
             'id_place' => 'required'
@@ -97,10 +98,12 @@ class InventoryController extends Controller
             'quantity' => 'required',
             'id_active_input' => 'required',
             'id_state' => 'required',
+            'serial_number' => 'required',
             'id_place' => 'required'
           ]);
           $inventory = Inventory::find($id);
           $inventory->quantity = $request->get('quantity');
+          $active_input->serial_number = $request->get('serial_number');
           $inventory->observation = $request->get('observation');
           $inventory->id_active_input = $request->get('id_active_input');
           $inventory->id_state = $request->get('id_state');

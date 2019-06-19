@@ -44,7 +44,7 @@
 
 
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-12">
                     <strong>Actives: </strong>
                     <select class="form-control" name="actives[]" multiple>
@@ -57,7 +57,7 @@
                         @endforeach
                     </select>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row">
                 <div class="col-md-12">

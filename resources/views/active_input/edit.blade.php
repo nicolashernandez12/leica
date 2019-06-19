@@ -48,10 +48,7 @@
             <textarea class="form-control" value="{{$active_input->description}}" name="description" rows="4" cols="80"></textarea>
         </div>
 
-        <div class="col-md-12">
-            <strong>Numero de serie:</strong>
-            <input type="text" name="serial_number" class="form-control" value="{{$active_input->serial_number}}" required="required">
-        </div>
+
 
         <div class="col-md-12">
             <strong>Modelo: </strong>

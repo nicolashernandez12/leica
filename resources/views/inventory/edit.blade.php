@@ -35,6 +35,11 @@
           </div>
 
           <div class="col-md-12">
+            <strong>Numero de serie:</strong>
+            <input type="text" name="serial_number" class="form-control" value="{{$active_input->serial_number}}" required="required">
+        </div>
+
+          <div class="col-md-12">
               <strong>Quantity:</strong>
               <input type="number" name="quantity" class="form-control" value="{{$inventory->quantity}}">
           </div>

@@ -14,6 +14,12 @@
           <strong>Name Active Input : </strong> {{$inventory->activeInput->input_name}}
         </div>
       </div>
+
+      <div class="col-md-12">
+        <div class="form-group">
+            <strong>Numero de serie : </strong> {{$active_input->serial_number}}
+        </div>
+    </div>
       <div class="col-md-12">
         <div class="form-group">
           <strong>quantity : </strong> {{$inventory->quantity}}
